@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_edt_Profile"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Edit Profile" />
+        <item
+            android:id="@+id/nav_update_email"
+            android:icon="@drawable/ic_mail_black"
+            android:title="Email Change Request" />
+        <item
+            android:id="@+id/nav_change_pass"
+            android:icon="@drawable/ic_security_black_24dp"
+            android:title="Change Password" />
+        <item
+            android:id="@+id/nav_become_member"
+            android:icon="@drawable/ic_user_premium"
+            android:title="Become Member" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_conatact"
+                android:icon="@drawable/ic_contact_mail_black_24dp"
+                android:title="Contact" />
+            <item
+                android:id="@+id/logout"
+                android:icon="@drawable/ic_power"
+                android:title="Logout" />
+        </menu>
+    </item>
+
+</menu>
