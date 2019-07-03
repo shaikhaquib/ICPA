@@ -13,7 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".MemberRegistraion"></activity>
+        <activity android:name=".FatigueReportForm"></activity>
+        <activity android:name=".Complaint_form" />
+        <activity android:name=".MemberRegistraion" />
         <activity android:name=".Notification" />
         <activity android:name=".Contact" />
         <activity android:name=".Edit_Profile" />
