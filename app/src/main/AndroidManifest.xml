@@ -13,7 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".FatigueReportForm"></activity>
+        <activity android:name=".ICPAMemeberApplication"></activity>
+        <activity android:name=".ClaimfromRWC" />
+        <activity android:name=".ClaimFormPMU" />
+        <activity android:name=".FatigueReportForm" />
         <activity android:name=".Complaint_form" />
         <activity android:name=".MemberRegistraion" />
         <activity android:name=".Notification" />

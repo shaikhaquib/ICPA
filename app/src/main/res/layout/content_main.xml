@@ -21,30 +21,42 @@
             android:layout_height="wrap_content">
 
             <LinearLayout
-                android:id="@+id/fdtl"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
                 android:orientation="vertical"
-                android:onClick="main">
-
-
-                <ImageView
+                android:layout_weight="1">
+                <RelativeLayout
+                    android:id="@+id/fatiguereport"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:layout_weight="1"
-                    android:src="@drawable/ic_calculator"/>
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:onClick="main"
+                    >
+
+                    <RelativeLayout
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:backgroundTint="#FDD835"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/circle"/>
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/ic_fatigue"/>
+
+
+                </RelativeLayout>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:layout_marginTop="4dp"
-                    android:textStyle="bold"
-                    android:text="FDTL Calculation"/>
-
-
+                    android:textSize="14sp"
+                    android:text="Fatigue Report"/>
 
 
             </LinearLayout>
@@ -67,7 +79,7 @@
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:layout_marginTop="4dp"
-                    android:textStyle="bold"
+                    android:textSize="14sp"
                     android:text="Personal Travel form"/>
 
             </LinearLayout>
@@ -87,7 +99,7 @@
                 android:layout_weight="1"
                 >
                 <RelativeLayout
-                    android:id="@+id/notification"
+                    android:id="@+id/claimformpmu"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:layout_weight="1"
@@ -105,7 +117,7 @@
                         android:layout_height="40dp"
                         android:layout_centerInParent="true"
                         android:tint="#fff"
-                        android:src="@drawable/ic_notifications"/>
+                        android:src="@drawable/ic_claims"/>
 
 
                 </RelativeLayout>
@@ -115,11 +127,87 @@
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:layout_marginTop="4dp"
-                    android:textStyle="bold"
-                    android:text="Notification"/>
+                    android:textSize="14sp"
+                    android:text="Claim Form PMU"/>
 
 
             </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                >
+                <RelativeLayout
+                    android:id="@+id/claimformws"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:onClick="main">
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_centerInParent="true"
+                        android:tint="#7CB342"
+                        android:src="@drawable/circle"/>
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerInParent="true"
+                        android:tint="#fff"
+                        android:src="@drawable/ic_claim_ii"/>
+
+
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:layout_marginTop="4dp"
+                    android:textSize="14sp"
+                    android:text="Claim Form Welfare Scheme"/>
+
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_horizontal_margin">
+
+            <LinearLayout
+                android:id="@+id/flightcalendar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:onClick="main">
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_calendar"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:layout_marginTop="4dp"
+                    android:textSize="14sp"
+                    android:text="Flight Request Calendar"/>
+
+            </LinearLayout>
+
+
+
             <LinearLayout
                 android:id="@+id/complaint"
                 android:layout_width="match_parent"
@@ -141,7 +229,7 @@
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:layout_marginTop="4dp"
-                    android:textStyle="bold"
+                    android:textSize="14sp"
                     android:text="Complaint"/>
 
 
@@ -151,53 +239,52 @@
 
 
 
-        </LinearLayout>
-        <LinearLayout
+        </LinearLayout> <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/activity_horizontal_margin">
 
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_weight="1">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
+            <RelativeLayout
+                android:id="@+id/userAccount"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:onClick="main"
+                >
+
                 <RelativeLayout
-                    android:id="@+id/userAccount"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
-                    android:layout_weight="1"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:onClick="main"
-                    >
-
-                    <RelativeLayout
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:backgroundTint="#FDD835"
-                        android:layout_centerInParent="true"
-                        android:background="@drawable/circle"/>
-                    <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_centerInParent="true"
-                        android:src="@drawable/ic_account"/>
+                    android:backgroundTint="#FDD835"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/circle"/>
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/ic_account"/>
 
 
-                </RelativeLayout>
+            </RelativeLayout>
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:layout_marginTop="4dp"
-                    android:textStyle="bold"
-                    android:text="User Account"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_marginTop="4dp"
+                android:textStyle="bold"
+                android:text="User Account"/>
 
 
-            </LinearLayout>
+        </LinearLayout>
 
 
 

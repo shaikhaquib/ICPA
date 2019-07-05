@@ -95,18 +95,21 @@ public class MainActivity extends AppCompatActivity
         int id = view.getId();
 
 
-        if (id == R.id.fdtl) {
+        if (id == R.id.fatiguereport) {
             // Handle the camera action
-         //   startActivity(new Intent(getApplicationContext(),Profile.class));
+            startActivity(new Intent(getApplicationContext(),FatigueReportForm.class));
         }else if (id == R.id.ptf) {
             // Handle the camera action
             startActivity(new Intent(getApplicationContext(),TravelForm.class));
-        }else  if (id == R.id.notification) {
+        }else  if (id == R.id.claimformpmu) {
             // Handle the camera action
-            startActivity(new Intent(getApplicationContext(),Notification.class));
+            startActivity(new Intent(getApplicationContext(),ClaimFormPMU.class));
+        }else  if (id == R.id.claimformws) {
+            // Handle the camera action
+            startActivity(new Intent(getApplicationContext(),ClaimfromRWC.class));
         }else  if (id == R.id.complaint) {
             // Handle the camera action
-        //    startActivity(new Intent(getApplicationContext(),Profile.class));
+           startActivity(new Intent(getApplicationContext(),Complaint_form.class));
         }else  if (id == R.id.userAccount) {
             // Handle the camera action
             startActivity(new Intent(getApplicationContext(),Profile.class));

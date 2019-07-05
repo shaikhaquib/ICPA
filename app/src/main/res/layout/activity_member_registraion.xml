@@ -8,7 +8,6 @@
     tools:context=".MemberRegistraion">
 
 
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -54,8 +53,8 @@
 
 
                         <android.support.design.widget.TextInputLayout
-                            android:layout_width="match_parent"
                             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <EditText
@@ -75,11 +74,10 @@
                             android:layout_height="wrap_content">
 
                             <android.support.design.widget.TextInputLayout
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="8"
-                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                                >
+                                android:layout_weight="8">
 
                                 <EditText
                                     android:id="@+id/edtBirthday"
@@ -93,28 +91,26 @@
 
                             <ImageButton
                                 android:id="@+id/Birthday"
-                                android:layout_weight="2"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:tint="#504C4C"
-                                android:src="@drawable/ic_school_calendar"/>
+                                android:layout_weight="2"
+                                android:src="@drawable/ic_school_calendar"
+                                android:tint="#504C4C" />
 
 
                         </LinearLayout>
 
                         <android.support.design.widget.TextInputLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
                             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                            >
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
 
                             <EditText
                                 android:id="@+id/txtCreditCard"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:hint="Address"
-                                android:inputType="text"
-                                />
+                                android:inputType="text" />
 
                         </android.support.design.widget.TextInputLayout>
 
@@ -138,28 +134,28 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:checked="true"
-                                android:text="Single"/>
+                                android:text="Single" />
+
                             <RadioButton
                                 android:id="@+id/Married"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Married"/>
+                                android:text="Married" />
 
 
                         </RadioGroup>
 
                         <LinearLayout
+                            android:id="@+id/layAnnie"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:id="@+id/layAnnie"
                             android:visibility="gone">
 
                             <android.support.design.widget.TextInputLayout
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="8"
-                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                                >
+                                android:layout_weight="8">
 
                                 <EditText
                                     android:id="@+id/edtanniversseryday"
@@ -173,11 +169,11 @@
 
                             <ImageButton
                                 android:id="@+id/anniversery"
-                                android:layout_weight="2"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:tint="#504C4C"
-                                android:src="@drawable/ic_school_calendar"/>
+                                android:layout_weight="2"
+                                android:src="@drawable/ic_school_calendar"
+                                android:tint="#504C4C" />
 
 
                         </LinearLayout>
@@ -209,10 +205,9 @@
 
 
                         <android.support.design.widget.TextInputLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
                             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                            >
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
 
                             <EditText
                                 android:id="@+id/txtLastName"
@@ -226,10 +221,9 @@
                         </android.support.design.widget.TextInputLayout>
 
                         <android.support.design.widget.TextInputLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
                             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                            >
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
 
                             <EditText
                                 android:id="@+id/txtEmail"
@@ -243,10 +237,9 @@
                         </android.support.design.widget.TextInputLayout>
 
                         <android.support.design.widget.TextInputLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
                             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                            >
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
 
                             <EditText
                                 android:id="@+id/txtPhone"
@@ -265,6 +258,7 @@
 
 
                 </android.support.v7.widget.CardView>
+
                 <android.support.v7.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -290,55 +284,60 @@
                             android:gravity="left"
                             android:text="Designation" />
 
-                            <RadioGroup
-                                android:layout_width="match_parent"
+                        <RadioGroup
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="6dp"
+                            android:orientation="vertical">
+
+                            <RadioButton
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_margin="6dp"
-                                android:orientation="vertical">
+                                android:text="First Officer" />
 
-                                <RadioButton
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="First Officer"/>
-                                <RadioButton
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Captain"/>
-                                <RadioButton
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Commander  "/>
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Captain" />
+
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Commander  " />
 
 
-                            </RadioGroup>
-<TextView
+                        </RadioGroup>
+
+                        <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_margin="6dp"
                             android:gravity="left"
                             android:text="Current Status" />
 
-                            <RadioGroup
-                                android:layout_width="match_parent"
+                        <RadioGroup
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="6dp"
+                            android:orientation="vertical">
+
+                            <RadioButton
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_margin="6dp"
-                                android:orientation="vertical">
+                                android:text="Permanent" />
 
-                                <RadioButton
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Permanent"/>
-                                <RadioButton
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Fixed term contract P2"/>
-                                <RadioButton
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="contract  Commander"/>
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Fixed term contract P2" />
+
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="contract  Commander" />
 
 
-                            </RadioGroup>
+                        </RadioGroup>
 
 
                         <TextView
@@ -357,27 +356,30 @@
                             <RadioButton
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="NR"/>
+                                android:text="NR" />
+
                             <RadioButton
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="SR"/>
+                                android:text="SR" />
+
                             <RadioButton
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="ER"/>
+                                android:text="ER" />
+
                             <RadioButton
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="WR"/>
+                                android:text="WR" />
 
 
                         </RadioGroup>
+
                         <android.support.design.widget.TextInputLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
                             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                            >
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
 
                             <EditText
                                 android:layout_width="match_parent"
@@ -418,10 +420,9 @@
 
 
                         <android.support.design.widget.TextInputLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
                             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                            >
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
 
                             <EditText
                                 android:id="@+id/txtPassword"
@@ -435,10 +436,9 @@
                         </android.support.design.widget.TextInputLayout>
 
                         <android.support.design.widget.TextInputLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
                             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                            >
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
 
                             <EditText
                                 android:id="@+id/txtConfirmPassword"
