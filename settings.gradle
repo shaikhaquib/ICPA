@@ -1,1 +1,2 @@
-include ':app'
+include ':app', ':app-release'
+project(':app-release').projectDir = new File('DOCs/sample-Code/SampleTesting/app-release')

@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Admin.LoginApprove">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/margin_16"
+                android:text="User Detail"
+                android:textStyle="bold"
+                android:textColor="#ff515365" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1.0dip"
+                android:background="#ffc2c5d9" />
+
+            <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:stretchColumns="2">
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+
+                    <TextView
+                        android:layout_width="150.0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:padding="@dimen/margin_16"
+                        android:text="Name"
+                        android:textColor="#ff6783b8"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="2"
+                        android:textColor="#ff304073" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+
+                    <TextView
+                        android:layout_width="150.0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:padding="13.0dip"
+                        android:text="email"
+                        android:textColor="#ff6783b8"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="2"
+                        android:textColor="#ff304073" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+
+                    <TextView
+                        android:layout_width="150.0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:padding="13.0dip"
+                        android:text="Work email"
+                        android:textColor="#ff6783b8"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/work_email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="2"
+                        android:textColor="#ff304073" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+
+                    <TextView
+                        android:layout_width="150.0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:padding="@dimen/margin_16"
+                        android:text="Mobile no"
+                        android:textColor="#ff6783b8"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/mobile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="2"
+                        android:textColor="#ff304073" />
+                </TableRow>
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+
+                    <TextView
+                        android:layout_width="150.0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:padding="@dimen/margin_16"
+                        android:text="Date of birth"
+                        android:textColor="#ff6783b8"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/dob"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="2"
+                        android:textColor="#ff304073" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+
+                    <TextView
+                        android:layout_width="150.0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:padding="@dimen/margin_16"
+                        android:text="Marital status"
+                        android:textColor="#ff6783b8"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/marital_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="2"
+                        android:textColor="#ff304073" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+
+                    <TextView
+                        android:layout_width="150.0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:padding="@dimen/margin_16"
+                        android:text="Address"
+                        android:textStyle="bold"
+                        android:textColor="#ff6783b8" />
+
+                    <TextView
+                        android:id="@+id/address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="2"
+                        android:textColor="#ff304073" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+
+                    <TextView
+                        android:layout_width="150.0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:padding="@dimen/margin_16"
+                        android:text="Designation"
+                        android:textStyle="bold"
+                        android:textColor="#ff6783b8" />
+
+                    <TextView
+                        android:id="@+id/designation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="2"
+                        android:textColor="#ff304073" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+
+                    <TextView
+                        android:layout_width="150.0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:padding="@dimen/margin_16"
+                        android:text="Batch no"
+                        android:textStyle="bold"
+                        android:textColor="#ff6783b8" />
+
+                    <TextView
+                        android:id="@+id/batch_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="2"
+                        android:textColor="#ff304073" />
+                </TableRow>
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+
+                    <TextView
+                        android:layout_width="150.0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:padding="@dimen/margin_16"
+                        android:text="Current fleet"
+                        android:textStyle="bold"
+                        android:textColor="#ff6783b8" />
+
+                    <TextView
+                        android:id="@+id/current_fleet"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="2"
+                        android:textColor="#ff304073" />
+                </TableRow>
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+
+                    <TextView
+                        android:layout_width="150.0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:padding="@dimen/margin_16"
+                        android:text="Sap_no"
+                        android:textStyle="bold"
+                        android:textColor="#ff6783b8" />
+
+                    <TextView
+                        android:id="@+id/sap_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="2"
+                        android:textColor="#ff304073" />
+                </TableRow>
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+
+                    <TextView
+                        android:layout_width="150.0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:padding="@dimen/margin_16"
+                        android:text="ICPA member"
+                        android:textStyle="bold"
+                        android:textColor="#ff6783b8" />
+
+                    <TextView
+                        android:id="@+id/member"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="2"
+                        android:textColor="#ff304073" />
+                </TableRow>
+            </TableLayout>
+
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/bottom"
+       >
+        <Button
+            android:id="@+id/approve"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_weight="1"
+            android:text="Approve"
+            android:backgroundTint="#4CAF50"
+            android:textColor="@color/white" />
+        <Button
+            android:id="@+id/disapprove"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="end"
+            android:text="Un approve"
+            android:backgroundTint="@color/colorPrimary"
+            android:textColor="@color/white"
+             />
+
+    </LinearLayout>
+
+</RelativeLayout>

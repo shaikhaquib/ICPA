@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Change_Password">
+    tools:context=".Activity.Change_Password">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -20,7 +20,6 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/txtChangePassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -36,6 +35,7 @@
                     android:layout_height="wrap_content">
 
                     <EditText
+                        android:id="@+id/email"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="New Email"
@@ -44,20 +44,68 @@
                         android:singleLine="true" />
 
                 </android.support.design.widget.TextInputLayout>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/reason"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Reason"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:singleLine="true" />
+
+                </android.support.design.widget.TextInputLayout>
 
                 <TextView
-                    android:id="@+id/txtMatchError"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textColor="@color/colorDanger"
-                    android:gravity="center" />
+                    android:layout_margin="6dp"
+                    android:gravity="left"
+                    android:text="Region"
+                    android:visibility="visible"/>
+
+                <RadioGroup
+                    android:id="@+id/Radio_region"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="6dp"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/nr"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="NR" />
+
+                    <RadioButton
+                        android:id="@+id/sr"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="SR" />
+
+                    <RadioButton
+                        android:id="@+id/er"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ER" />
+
+                    <RadioButton
+                        android:id="@+id/wr"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="WR" />
+
+
+                </RadioGroup>
 
             </LinearLayout>
         </ScrollView>
 
         <Button
-            android:id="@+id/btnChangePassword"
+            android:id="@+id/btnRequest"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"

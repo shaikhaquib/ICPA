@@ -5,11 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ICPAMemeberApplication">
+    tools:context=".Activity.ICPAMemeberApplication">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:paddingBottom="50dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -18,7 +19,6 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/txtChangePassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -34,6 +34,7 @@
                 android:layout_height="wrap_content">
 
                 <EditText
+                    android:id="@+id/name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Name"
@@ -48,6 +49,7 @@
                 android:layout_height="wrap_content">
 
                 <EditText
+                    android:id="@+id/employeeno"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Employee Number"
@@ -61,6 +63,7 @@
                 android:layout_height="wrap_content">
 
                 <EditText
+                    android:id="@+id/address"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Address"
@@ -74,6 +77,7 @@
                 android:layout_height="wrap_content">
 
                 <EditText
+                    android:id="@+id/mobile"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Phone number"
@@ -87,6 +91,7 @@
                 android:layout_height="wrap_content">
 
                 <EditText
+                    android:id="@+id/email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Email"
@@ -106,27 +111,35 @@
                 android:text="Region" />
 
             <RadioGroup
+                android:id="@+id/Radio_region"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="6dp"
                 android:orientation="horizontal">
 
                 <RadioButton
+                    android:id="@+id/nr"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="NR"/>
+                    android:text="NR" />
+
                 <RadioButton
+                    android:id="@+id/sr"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="SR"/>
+                    android:text="SR" />
+
                 <RadioButton
+                    android:id="@+id/er"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="ER"/>
+                    android:text="ER" />
+
                 <RadioButton
+                    android:id="@+id/wr"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="WR"/>
+                    android:text="WR" />
 
 
             </RadioGroup>
@@ -140,25 +153,65 @@
                 android:text="Designation" />
 
             <RadioGroup
+                android:id="@+id/radioDesignation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:orientation="vertical"
+                >
+
+                <RadioButton
+                    android:id="@+id/officer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="First Officer" />
+
+                <RadioButton
+                    android:id="@+id/captain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Captain" />
+
+                <RadioButton
+                    android:id="@+id/commander"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Commander  " />
+
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:gravity="left"
+                android:text="Current status" />
+
+            <RadioGroup
+                android:id="@+id/radioCurrentstatus"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="6dp"
                 android:orientation="vertical">
 
                 <RadioButton
+                    android:id="@+id/permenant"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="First Officer" />
+                    android:text="Permanent" />
 
                 <RadioButton
+                    android:id="@+id/Fixed_term_contract_P2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Captain" />
+                    android:text="Fixed term contract P2" />
 
                 <RadioButton
+                    android:id="@+id/contract_Commander"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Commander  " />
+                    android:text="contract  Commander" />
 
 
             </RadioGroup>
@@ -169,6 +222,7 @@
     </ScrollView>
 
     <Button
+        android:id="@+id/btnSubmit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"

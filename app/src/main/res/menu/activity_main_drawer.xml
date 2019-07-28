@@ -13,6 +13,10 @@
             android:icon="@drawable/ic_mail_black"
             android:title="Email Change Request" />
         <item
+            android:id="@+id/nav_update_region"
+            android:icon="@android:drawable/ic_menu_myplaces"
+            android:title="Region Change Request" />
+        <item
             android:id="@+id/nav_change_pass"
             android:icon="@drawable/ic_security_black_24dp"
             android:title="Change Password" />

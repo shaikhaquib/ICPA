@@ -5,120 +5,511 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Edit_Profile">
+    tools:context=".Activity.Edit_Profile">
+
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <ScrollView
-            android:id="@+id/edit_client_form"
+            android:id="@+id/register_form"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_above="@+id/btnUpdate"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="-65dp">
+
             <LinearLayout
-                android:id="@+id/client_edit_form"
+                android:id="@+id/employee_registration_form"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:padding="15dp"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:padding="15dp">
 
-                <android.support.design.widget.TextInputLayout
+
+                <android.support.v7.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <EditText
-                        android:id="@+id/txtFirstNameEdit"
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/prompt_first_name"
-                        android:inputType="text"
-                        android:maxLines="1"
-                        android:singleLine="true"
-                        android:text="John"/>
+                        android:layout_margin="8dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:gravity="left"
+                            android:text="Personal information" />
 
 
-                </android.support.design.widget.TextInputLayout>
-                <android.support.design.widget.TextInputLayout
+                        <android.support.design.widget.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <EditText
+                                android:id="@+id/Name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Name"
+                                android:inputType="text"
+                                android:maxLines="1"
+                                android:singleLine="true" />
+
+
+                        </android.support.design.widget.TextInputLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <android.support.design.widget.TextInputLayout
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="8">
+
+                                <EditText
+                                    android:id="@+id/edtBirthday"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:editable="false"
+                                    android:hint="Birthday"
+                                    android:maxLines="1"
+                                    android:singleLine="true" />
+
+                            </android.support.design.widget.TextInputLayout>
+
+                            <ImageButton
+                                android:id="@+id/Birthday"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:src="@drawable/ic_school_calendar"
+                                android:tint="#504C4C" />
+
+
+                        </LinearLayout>
+
+                        <android.support.design.widget.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <EditText
+                                android:id="@+id/address"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Address"
+                                android:inputType="text" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="6dp"
+                            android:gravity="left"
+                            android:text="Merital status" />
+
+                        <RadioGroup
+                            android:id="@+id/RgMeritalsts"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="6dp"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/Single"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="true"
+                                android:text="Single" />
+
+                            <RadioButton
+                                android:id="@+id/Married"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Married" />
+
+
+                        </RadioGroup>
+
+                        <LinearLayout
+                            android:id="@+id/layAnnie"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone">
+
+                            <android.support.design.widget.TextInputLayout
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="8">
+
+                                <EditText
+                                    android:id="@+id/edtanniversseryday"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="Birthday"
+                                    android:maxLines="1"
+                                    android:singleLine="true" />
+
+                            </android.support.design.widget.TextInputLayout>
+
+                            <ImageButton
+                                android:id="@+id/anniversery"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:src="@drawable/ic_school_calendar"
+                                android:tint="#504C4C" />
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+
+                <android.support.v7.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:visibility="gone">
 
-                    <EditText
-                        android:id="@+id/txtLastNameEdit"
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/prompt_last_name"
-                        android:inputType="text"
-                        android:maxLines="1"
-                        android:singleLine="true"
-                        android:text="doe"/>
+                        android:layout_margin="8dp"
+                        android:orientation="vertical">
 
-                </android.support.design.widget.TextInputLayout>
-                <android.support.design.widget.TextInputLayout
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:gravity="left"
+                            android:text="Contact detail" />
+
+
+                        <android.support.design.widget.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <EditText
+                                android:id="@+id/pemail"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Personal Email"
+                                android:inputType="textEmailAddress"
+                                android:maxLines="1"
+                                android:singleLine="true" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                        <android.support.design.widget.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <EditText
+                                android:id="@+id/oEmail"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Official Email"
+                                android:inputType="textEmailAddress"
+                                android:maxLines="1"
+                                android:singleLine="true" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                        <android.support.design.widget.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <EditText
+                                android:id="@+id/mobile"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/prompt_phone"
+                                android:inputType="number"
+                                android:maxLength="10"
+                                android:maxLines="1"
+                                android:singleLine="true" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+
+                    </LinearLayout>
+
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp">
 
-                    <EditText
-                        android:id="@+id/txtEmailEdit"
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/prompt_email"
-                        android:inputType="textEmailAddress"
-                        android:maxLines="1"
-                        android:singleLine="true"
-                        android:text="john.doe@gmail.com"/>
-
-                </android.support.design.widget.TextInputLayout>
+                        android:layout_margin="8dp"
+                        android:orientation="vertical">
 
 
-                <android.support.design.widget.TextInputLayout
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:gravity="left"
+                            android:text="Official information" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="6dp"
+                            android:gravity="left"
+                            android:text="Designation" />
+
+                        <RadioGroup
+                            android:id="@+id/radioDesignation"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="6dp"
+                            android:orientation="vertical">
+
+                            <RadioButton
+                                android:id="@+id/officer"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="First Officer" />
+
+                            <RadioButton
+                                android:id="@+id/captain"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Captain" />
+
+                            <RadioButton
+                                android:id="@+id/commander"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Commander" />
+
+
+                        </RadioGroup>
+
+                        <android.support.design.widget.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <EditText
+                                android:id="@+id/batch_no"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Batch no"
+                                android:inputType="text" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="6dp"
+                            android:gravity="left"
+                            android:text="Current Fleet" />
+
+                        <RadioGroup
+                            android:id="@+id/radioCurrentstatus"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="6dp"
+                            android:orientation="vertical">
+
+                            <RadioButton
+                                android:id="@+id/B-777"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="B-777" />
+
+                            <RadioButton
+                                android:id="@+id/B-787"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="B-787" />
+
+                            <RadioButton
+                                android:id="@+id/B-747"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="B-747" />
+
+                            <RadioButton
+                                android:id="@+id/A-320"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="A-320" />
+
+
+                        </RadioGroup>
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="6dp"
+                            android:gravity="left"
+                            android:text="Region"
+                            android:visibility="gone"/>
+
+                        <RadioGroup
+                            android:id="@+id/Radio_region"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="6dp"
+                            android:visibility="gone"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/nr"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="NR" />
+
+                            <RadioButton
+                                android:id="@+id/sr"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="SR" />
+
+                            <RadioButton
+                                android:id="@+id/er"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="ER" />
+
+                            <RadioButton
+                                android:id="@+id/wr"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="WR" />
+
+
+                        </RadioGroup>
+
+                        <android.support.design.widget.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <EditText
+                                android:id="@+id/sapno"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="SAP No"
+                                android:inputType="number"
+                                android:maxLength="10"
+                                android:maxLines="1"
+                                android:singleLine="true" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+
+                    </LinearLayout>
+
+
+                </android.support.v7.widget.CardView>
+
+
+                <android.support.v7.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:visibility="gone">
 
-                    <EditText
-                        android:id="@+id/txtPhoneEdit"
+
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/prompt_phone"
-                        android:inputType="text"
-                        android:maxLines="1"
-                        android:singleLine="true"
-                        android:text="4162354874"/>
+                        android:layout_margin="8dp"
+                        android:orientation="vertical">
 
-                </android.support.design.widget.TextInputLayout>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:gravity="left"
+                            android:text="Password" />
 
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
 
-                    <EditText
-                        android:id="@+id/txtCreditCardEdit"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/prompt_credit_card"
-                        android:inputType="text"
-                        android:maxLines="1"
-                        android:singleLine="true"
-                        android:text="**** **** **** 2048"/>
+                        <android.support.design.widget.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
 
-                </android.support.design.widget.TextInputLayout>
+                            <EditText
+                                android:id="@+id/txtPassword"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/prompt_password"
+                                android:inputType="textPassword"
+                                android:maxLines="1"
+                                android:singleLine="true" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                        <android.support.design.widget.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <EditText
+                                android:id="@+id/txtConfirmPassword"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/prompt_confirm_password"
+                                android:inputType="textPassword"
+                                android:maxLines="1"
+                                android:singleLine="true" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+
+                    </LinearLayout>
+
+
+                </android.support.v7.widget.CardView>
 
 
             </LinearLayout>
 
 
-
         </ScrollView>
 
         <Button
-            android:id="@+id/btnSaveProfile"
+            android:id="@+id/btnUpdate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:background="@color/primaryBlue"
-            android:textColor="@color/colorInverted"
-            android:text="Save"
-            android:textSize="18sp"
+            android:fontFamily="sans-serif"
+            android:text="Update Profile"
             android:textAllCaps="false"
-            android:fontFamily="sans-serif"/>
+            android:textColor="@color/colorInverted"
+            android:onClick="editprofile"
+            android:textSize="18sp" />
 
 
     </RelativeLayout>

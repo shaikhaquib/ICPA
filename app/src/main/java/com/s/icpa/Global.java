@@ -33,7 +33,7 @@ public class Global {
     public static int sent = 0;
     public static int current_count = 0;
     public static String customer_id;
-    public static String userId;
+    public static String Region;
     public static String name;
     public static String token ;
     public static String empStatus;
@@ -53,90 +53,28 @@ public class Global {
     public static final String PREF_UID = ".Uid";
 
     public static String error_code;
+    public static String Email;
+    public static String mobile;
 
 
-    public static void slideUp(final View view){
-        TranslateAnimation animate = new TranslateAnimation(
-                0,                 // fromXDelta
-                0,                 // toXDelta
-                view.getHeight(),  // fromYDelta
-                0);                // toYDelta
-        animate.setDuration(500);
-        animate.setFillAfter(true);
-        view.startAnimation(animate);
-        animate.setAnimationListener(new Animation.AnimationListener() {
-            @Override
-            public void onAnimationStart(Animation animation) {
+    public static void diloge(final Context context ,String Title ,String Message){
 
-            }
-
-            @Override
-            public void onAnimationEnd(Animation animation) {
-                view.clearAnimation();
-            }
-
-            @Override
-            public void onAnimationRepeat(Animation animation) {
-
-            }
-        });
-    }
-    public static void slideDown(final View view){
-        TranslateAnimation animate = new TranslateAnimation(
-                0,                    // fromXDelta
-                0,                    // toXDelta
-                0,                 // fromYDelta
-                view.getHeight());          // toYDelta
-        animate.setDuration(500);
-        animate.setFillAfter(true);
-        view.startAnimation(animate);
-        animate.setAnimationListener(new Animation.AnimationListener() {
-            @Override
-            public void onAnimationStart(Animation animation) {
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animation animation) {
-                view.setVisibility(View.GONE);
-                view.clearAnimation();
-            }
-
-            @Override
-            public void onAnimationRepeat(Animation animation) {
-
-            }
-        });
-
-    }
-    public static void slideToRight(View view){
-        TranslateAnimation animate = new TranslateAnimation(0,view.getWidth(),0,0);
-        animate.setDuration(500);
-        animate.setFillAfter(true);
-        view.startAnimation(animate);
-    }
-    public static void slideToLeft(final View view){
-        TranslateAnimation animate = new TranslateAnimation(0,-view.getWidth(),0,0);
-        animate.setDuration(500);
-        animate.setFillAfter(true);
-        view.startAnimation(animate);
-        animate.setAnimationListener(new Animation.AnimationListener() {
-            @Override
-            public void onAnimationStart(Animation animation) {
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animation animation) {
-                    view.setVisibility(View.GONE);
-                    view.clearAnimation();
-            }
-
-            @Override
-            public void onAnimationRepeat(Animation animation) {
-
-            }
-        });
+        AlertDialog.Builder builder;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            builder = new AlertDialog.Builder(context, android.R.style.Theme_Material_Light_Dialog_Alert);
+        } else {
+            builder = new AlertDialog.Builder(context);
+        }
+        builder.setCancelable(false);
+        builder.setTitle(Title)
+                .setMessage(Message)
+                .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                })
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .show();
     }
 
     public static String Dateformate(String str) throws ParseException {

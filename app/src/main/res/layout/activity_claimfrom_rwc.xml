@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ClaimFormPMU">
+    tools:context=".Activity.ClaimFormPMU">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -34,6 +34,7 @@
                 android:layout_height="wrap_content">
 
                 <EditText
+                    android:id="@+id/name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Name"
@@ -48,6 +49,7 @@
                 android:layout_height="wrap_content">
 
                 <EditText
+                    android:id="@+id/Designation"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Designation"
@@ -61,6 +63,7 @@
                 android:layout_height="wrap_content">
 
                 <EditText
+                    android:id="@+id/sapno"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="SAP Number"
@@ -69,19 +72,39 @@
                     android:singleLine="true" />
 
             </android.support.design.widget.TextInputLayout>
-            <android.support.design.widget.TextInputLayout
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-                <EditText
-                    android:layout_width="match_parent"
+                <android.support.design.widget.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:hint="Date of TMU"
-                    android:inputType="text"
-                    android:maxLines="1"
-                    android:singleLine="true" />
+                    android:layout_weight="8">
 
-            </android.support.design.widget.TextInputLayout>
+                    <EditText
+                        android:id="@+id/dopmu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Date of TMU"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:editable="false"
+                        android:singleLine="true" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <ImageButton
+                    android:id="@+id/btn_date_pmu"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:src="@drawable/ic_school_calendar"
+                    android:tint="#504C4C" />
+
+
+            </LinearLayout>
 
 
 
@@ -93,27 +116,35 @@
                 android:text="Region" />
 
             <RadioGroup
+                android:id="@+id/Radio_region"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="6dp"
                 android:orientation="horizontal">
 
                 <RadioButton
+                    android:id="@+id/nr"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="NR"/>
+                    android:text="NR" />
+
                 <RadioButton
+                    android:id="@+id/sr"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="SR"/>
+                    android:text="SR" />
+
                 <RadioButton
+                    android:id="@+id/er"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="ER"/>
+                    android:text="ER" />
+
                 <RadioButton
+                    android:id="@+id/wr"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="WR"/>
+                    android:text="WR" />
 
 
             </RadioGroup>
@@ -130,6 +161,7 @@
 
 
             <ImageButton
+                android:id="@+id/btn_picker"
                 android:layout_width="70dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="25dp"
@@ -146,6 +178,7 @@
     </ScrollView>
 
     <Button
+        android:id="@+id/submitpmu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"

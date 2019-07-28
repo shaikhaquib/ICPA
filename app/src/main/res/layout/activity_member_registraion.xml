@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MemberRegistraion">
+    tools:context=".Activity.MemberRegistraion">
 
 
     <RelativeLayout
@@ -58,7 +58,7 @@
                             android:layout_height="wrap_content">
 
                             <EditText
-                                android:id="@+id/txtFirstName"
+                                android:id="@+id/Name"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:hint="Name"
@@ -85,6 +85,7 @@
                                     android:layout_height="wrap_content"
                                     android:hint="Birthday"
                                     android:maxLines="1"
+                                    android:editable="false"
                                     android:singleLine="true" />
 
                             </android.support.design.widget.TextInputLayout>
@@ -106,7 +107,7 @@
                             android:layout_height="wrap_content">
 
                             <EditText
-                                android:id="@+id/txtCreditCard"
+                                android:id="@+id/address"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:hint="Address"
@@ -120,7 +121,7 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="6dp"
                             android:gravity="left"
-                            android:text="Region" />
+                            android:text="Merital status" />
 
                         <RadioGroup
                             android:id="@+id/RgMeritalsts"
@@ -161,7 +162,7 @@
                                     android:id="@+id/edtanniversseryday"
                                     android:layout_width="fill_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="Birthday"
+                                    android:hint="Wedding date"
                                     android:maxLines="1"
                                     android:singleLine="true" />
 
@@ -210,7 +211,7 @@
                             android:layout_height="wrap_content">
 
                             <EditText
-                                android:id="@+id/txtLastName"
+                                android:id="@+id/pemail"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:hint="Personal Email"
@@ -226,7 +227,7 @@
                             android:layout_height="wrap_content">
 
                             <EditText
-                                android:id="@+id/txtEmail"
+                                android:id="@+id/oEmail"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:hint="Official Email"
@@ -242,7 +243,7 @@
                             android:layout_height="wrap_content">
 
                             <EditText
-                                android:id="@+id/txtPhone"
+                                android:id="@+id/mobile"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:hint="@string/prompt_phone"
@@ -270,6 +271,8 @@
                         android:layout_margin="8dp"
                         android:orientation="vertical">
 
+
+
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -285,22 +288,27 @@
                             android:text="Designation" />
 
                         <RadioGroup
+                            android:id="@+id/radioDesignation"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_margin="6dp"
-                            android:orientation="vertical">
+                            android:orientation="vertical"
+                            >
 
                             <RadioButton
+                                android:id="@+id/officer"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="First Officer" />
 
                             <RadioButton
+                                android:id="@+id/captain"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Captain" />
 
                             <RadioButton
+                                android:id="@+id/commander"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Commander  " />
@@ -308,33 +316,91 @@
 
                         </RadioGroup>
 
+                        <android.support.design.widget.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <EditText
+                                android:id="@+id/batch_no"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Batch no"
+                                android:inputType="text" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_margin="6dp"
                             android:gravity="left"
-                            android:text="Current Status" />
+                            android:text="Member Status" />
 
                         <RadioGroup
+                            android:id="@+id/radioMember"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="6dp"
+                            android:orientation="vertical">
+
+
+
+                            <RadioButton
+                                android:id="@+id/icpa"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:tag="yes"
+                                android:text="ICPA" />
+
+                            <RadioButton
+                                android:id="@+id/nonicpa"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:tag="no"
+                                android:text="NON-ICPA" />
+
+
+                        </RadioGroup>
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="6dp"
+                            android:gravity="left"
+                            android:text="Current Fleet" />
+
+                        <RadioGroup
+                            android:id="@+id/radioCurrentstatus"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_margin="6dp"
                             android:orientation="vertical">
 
                             <RadioButton
+                                android:id="@+id/B-777"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Permanent" />
+                                android:text="B-777" />
 
                             <RadioButton
+                                android:id="@+id/B-787"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Fixed term contract P2" />
+                                android:text="B-787" />
 
                             <RadioButton
+                                android:id="@+id/B-747"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="contract  Commander" />
+                                android:text="B-747" />
+                            <RadioButton
+                                android:id="@+id/A-320"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="A-320" />
 
 
                         </RadioGroup>
@@ -348,27 +414,32 @@
                             android:text="Region" />
 
                         <RadioGroup
+                            android:id="@+id/Radio_region"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_margin="6dp"
                             android:orientation="horizontal">
 
                             <RadioButton
+                                android:id="@+id/nr"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="NR" />
 
                             <RadioButton
+                                android:id="@+id/sr"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="SR" />
 
                             <RadioButton
+                                android:id="@+id/er"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="ER" />
 
                             <RadioButton
+                                android:id="@+id/wr"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="WR" />
@@ -382,6 +453,7 @@
                             android:layout_height="wrap_content">
 
                             <EditText
+                                android:id="@+id/sapno"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:hint="SAP No"
@@ -463,6 +535,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
                     android:gravity="center"
+                    android:onClick="register"
                     android:text="Already have an account? Login" />
 
             </LinearLayout>
@@ -480,6 +553,7 @@
             android:text="Register"
             android:textAllCaps="false"
             android:textColor="@color/colorInverted"
+            android:onClick="register"
             android:textSize="18sp" />
 
 

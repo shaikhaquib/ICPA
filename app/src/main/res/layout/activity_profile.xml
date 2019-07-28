@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/colorLightGray"
-    tools:context="com.mentesnot.easytravel.controllers.ProfileActivity">
+    tools:context=".Activity.Profile">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -15,39 +15,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:padding="15dp"
-                android:layout_weight="2"
-                android:gravity="center"
-                android:layout_marginBottom="16dp"
-                android:background="@color/backgroundDefault">
-
-
-
-                <ImageView
-                    android:id="@+id/profileImage"
-                    android:layout_width="wrap_content"
-                    android:layout_height="150dp"
-                    android:layout_marginTop="25dp"
-                    android:gravity="center"
-                    android:src="@drawable/placeholder"/>
-
-                <TextView
-                    android:id="@+id/txtFullName"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="25sp"
-                    android:fontFamily="sans-serif-thin"
-                    android:gravity="center"
-                    android:layout_marginTop="16dp"
-                    android:text="John Doe"/>
-
-
-
-            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -70,36 +37,84 @@
 
 
                 <TextView
-                    android:id="@+id/txtClientFirstName"
+                    android:id="@+id/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:text="FirstName: John"/>
+                <TextView
+                    android:id="@+id/batch_no"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
                     android:text="FirstName: John"/>
 
                 <TextView
-                    android:id="@+id/txtClientLastName"
+                    android:id="@+id/dob"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
-                    android:text="Las name: Doe"/>
+                    android:text=": Doe"/>
                 <TextView
-                    android:id="@+id/txtClientEmail"
+                    android:id="@+id/email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
                     android:text="Email: john.doe@gmail.com"/>
                 <TextView
-                    android:id="@+id/txtClientPhone"
+                    android:id="@+id/work_email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
                     android:text="Email: 4162354874"/>
                 <TextView
-                    android:id="@+id/txtClientCreditCard"
+                    android:id="@+id/mobile"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
-                    android:text="Credit Card: **** **** **** 2048"/>
+                    android:text="Email: 4162354874"/>
+                <TextView
+                    android:id="@+id/region"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    />
+                <TextView
+                    android:id="@+id/current_fleet"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    />
+                <TextView
+                    android:id="@+id/sap_no"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    />
+                <TextView
+                    android:id="@+id/address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    />
+                <TextView
+                    android:id="@+id/member"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    />
+                <TextView
+                    android:id="@+id/designation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    />
+                <TextView
+                    android:id="@+id/marital_status"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    />
 
 
                 <ImageButton

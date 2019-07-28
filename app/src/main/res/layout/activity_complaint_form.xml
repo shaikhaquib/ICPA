@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Complaint_form">
+    tools:context=".Activity.Complaint_form">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -34,12 +34,14 @@
             android:layout_height="wrap_content">
 
             <EditText
+                android:id="@+id/name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Name"
                 android:inputType="text"
                 android:maxLines="1"
-                android:singleLine="true" />
+                android:singleLine="true"
+                />
 
         </android.support.design.widget.TextInputLayout>
 
@@ -48,6 +50,7 @@
             android:layout_height="wrap_content">
 
             <EditText
+                android:id="@+id/Designation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Designation"
@@ -67,42 +70,55 @@
             android:text="Region" />
 
         <RadioGroup
+            android:id="@+id/Radio_region"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="6dp"
             android:orientation="horizontal">
 
             <RadioButton
+                android:id="@+id/nr"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="NR"/>
+                android:text="NR" />
+
             <RadioButton
+                android:id="@+id/sr"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="SR"/>
+                android:text="SR" />
+
             <RadioButton
+                android:id="@+id/er"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ER"/>
+                android:text="ER" />
+
             <RadioButton
+                android:id="@+id/wr"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="WR"/>
+                android:text="WR" />
 
 
         </RadioGroup>
 
+
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
             <EditText
+                android:id="@+id/complaint"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Complaint"
-                android:inputType="text"
-                android:maxLines="1"
-                android:singleLine="true" />
+                android:gravity="top"
+                android:inputType="textMultiLine"
+                android:lines="4"
+                android:maxLines="6"
+                />
 
         </android.support.design.widget.TextInputLayout>
 
@@ -120,6 +136,7 @@
     </ScrollView>
 
     <Button
+        android:id="@+id/btncomplaint"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"

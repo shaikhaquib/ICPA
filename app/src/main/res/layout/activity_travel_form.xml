@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Change_Password">
+    tools:context=".Activity.Change_Password">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -20,7 +20,6 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/txtChangePassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -36,6 +35,7 @@
                     android:layout_height="wrap_content">
 
                     <EditText
+                        android:id="@+id/name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Name"
@@ -49,6 +49,7 @@
                     android:layout_height="wrap_content">
 
                     <EditText
+                        android:id="@+id/staffnumber"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Staff number"
@@ -62,6 +63,7 @@
                     android:layout_height="wrap_content">
 
                     <EditText
+                        android:id="@+id/email"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Email ID"
@@ -75,6 +77,7 @@
                     android:layout_height="wrap_content">
 
                     <EditText
+                        android:id="@+id/mobile"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Mobile no"
@@ -90,6 +93,7 @@
                     android:layout_height="wrap_content">
 
                     <EditText
+                        android:id="@+id/flightnumber"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Flight Number"
@@ -100,12 +104,14 @@
                 </android.support.design.widget.TextInputLayout>
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:visibility="visible">
 
                     <EditText
+                        android:id="@+id/flighttype"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Sector"
+                        android:hint="Flight type"
                         android:inputType="text"
                         android:maxLines="1"
                         android:singleLine="true" />
@@ -116,6 +122,7 @@
                     android:layout_height="wrap_content">
 
                     <EditText
+                        android:id="@+id/dateoftravel"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Date of travel"
@@ -129,6 +136,7 @@
                     android:layout_height="wrap_content">
 
                     <EditText
+                        android:id="@+id/leavesanctionedfrom"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Leave Sanctioned form"
@@ -142,6 +150,7 @@
                     android:layout_height="wrap_content">
 
                     <EditText
+                        android:id="@+id/leavesanctionedto"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Leave Sanctioned to"
@@ -152,18 +161,50 @@
                 </android.support.design.widget.TextInputLayout>
 
                 <TextView
-                    android:id="@+id/txtMatchError"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textColor="@color/colorDanger"
-                    android:gravity="center" />
+                    android:layout_margin="6dp"
+                    android:gravity="left"
+                    android:text="Current Fleet" />
+
+                <RadioGroup
+                    android:id="@+id/radioCurrentstatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="6dp"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/B-777"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="B-777" />
+
+                    <RadioButton
+                        android:id="@+id/B-787"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="B-787" />
+
+                    <RadioButton
+                        android:id="@+id/B-747"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="B-747" />
+                    <RadioButton
+                        android:id="@+id/A-320"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="A-320" />
+
+
+                </RadioGroup>
 
             </LinearLayout>
         </ScrollView>
 
         <Button
-            android:id="@+id/btnChangePassword"
+            android:id="@+id/btnSubmit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Admin.PMU_Detail">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/margin_16"
+                android:text="Claim RWC Detail"
+                android:textStyle="bold"
+                android:textColor="#ff515365" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1.0dip"
+                android:background="#ffc2c5d9" />
+
+            <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:stretchColumns="2">
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+
+                    <TextView
+                        android:layout_width="150.0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:padding="@dimen/margin_16"
+                        android:text="Name"
+                        android:textColor="#ff6783b8"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="2"
+                        android:textColor="#ff304073" />
+                </TableRow>
+
+
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+
+                    <TextView
+                        android:layout_width="150.0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:padding="@dimen/margin_16"
+                        android:text="Designation"
+                        android:textStyle="bold"
+                        android:textColor="#ff6783b8" />
+
+                    <TextView
+                        android:id="@+id/designation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="2"
+                        android:textColor="#ff304073" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+
+                    <TextView
+                        android:layout_width="150.0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:padding="@dimen/margin_16"
+                        android:text="SAP number"
+                        android:textColor="#ff6783b8"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/sapno"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="2"
+                        android:textColor="#ff304073" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+
+                    <TextView
+                        android:layout_width="150.0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:padding="@dimen/margin_16"
+                        android:text="Date of PMU"
+                        android:textColor="#ff6783b8"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/dateofpmu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="2"
+                        android:textColor="#ff304073" />
+                </TableRow>
+
+
+
+            </TableLayout>
+
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/bottom"
+        >
+        <Button
+            android:id="@+id/approve"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_weight="1"
+            android:text="Approve"
+            android:backgroundTint="#4CAF50"
+            android:textColor="@color/white" />
+        <Button
+            android:id="@+id/disapprove"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="end"
+            android:text="Un approve"
+            android:backgroundTint="@color/colorPrimary"
+            android:textColor="@color/white"
+            />
+
+    </LinearLayout>
+
+</RelativeLayout>
