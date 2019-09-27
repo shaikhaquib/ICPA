@@ -2,14 +2,19 @@ package com.s.icpa.Admin;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
+import com.s.icpa.Global;
 import com.s.icpa.Model.PMU_Model;
 import com.s.icpa.R;
+import com.s.icpa.SendNotification;
 
 public class RWC_Detail extends AppCompatActivity {
 
-    TextView name, email,  mobile, designation, dateofpmu,sapno;
+    TextView name, email,  link, designation, dateofpmu,sapno;
+    Button approve, disapprove;
 
 
     @Override
@@ -20,6 +25,17 @@ public class RWC_Detail extends AppCompatActivity {
         designation = findViewById(R.id.designation);
         dateofpmu = findViewById(R.id.dateofpmu);
         sapno = findViewById(R.id.sapno);
+        approve = findViewById(R.id.approve);
+        disapprove = findViewById(R.id.disapprove);
+        link = findViewById(R.id.link);
+
+
+        disapprove.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new SendNotification(RWC_Detail.this).execute(Global.customer_id,name.getText().toString()+"RWC Claim","your request for RWC Claim has been disapproved.For more information you can contact region admin" );
+            }
+        });
 
 
         getData();
@@ -33,10 +49,11 @@ public class RWC_Detail extends AppCompatActivity {
         setTitle(data.getName());
 
         name.setText(data.getName());
-
+        if (data.getDocumentUrl()!=null)
+            link.setText(data.getDocumentUrl().replace(",","\n"));
         sapno.setText(data.getSapNo());
         designation.setText(data.getDesignation());
-        dateofpmu.setText(data.getDate());
+            dateofpmu.setText(data.getDate());
 
     }
 }

@@ -1,5 +1,6 @@
 package com.s.icpa.Admin;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -57,9 +58,22 @@ public class ChangeRegion_List extends AppCompatActivity {
             @Override
             public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
                 Holder holder = (Holder) viewHolder;
-                EmailRequest request = list.get(i);
+                final  EmailRequest request = list.get(i);
                 holder.name.setText(request.getName());
                 holder.id.setText(request.getNewRegion());
+
+                holder.itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(getApplicationContext(),Update_Region.class);
+                        intent.putExtra("data", request);
+                        startActivity(intent);
+
+// To retrieve object in second Activity
+                    }
+                });
+
+
             }
 
             @Override

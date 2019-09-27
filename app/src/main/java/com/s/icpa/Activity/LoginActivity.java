@@ -8,13 +8,21 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.google.gson.Gson;
+import com.s.icpa.Admin.ACM_List;
 import com.s.icpa.Admin.AdminActivity;
+import com.s.icpa.Admin.AdminBlogs;
+import com.s.icpa.Admin.ApplicationsForm;
+import com.s.icpa.Admin.FatigueReportList;
+import com.s.icpa.Admin.LoginApprove;
+import com.s.icpa.Admin.PMU;
+import com.s.icpa.Admin.RWC;
 import com.s.icpa.AppController;
 import com.s.icpa.Global;
 import com.s.icpa.Model.LoginModel;
@@ -97,8 +105,8 @@ public class LoginActivity extends AppCompatActivity {
                     JSONObject jsonObject = new JSONObject(response);
                     if (jsonObject.getBoolean("status"))
                     {
-                        session.setLogin(true);
                         LoginModel data = new Gson().fromJson(response, LoginModel.class);
+                        db.deleteUsers();
                         db.addUser(
                                 data.getCustomerId(),
                                 data.getBatchNo(),
@@ -117,13 +125,47 @@ public class LoginActivity extends AppCompatActivity {
                                 data.getDesignation(),
                                 data.getRegion()
                                 );
-                        if(!data.getVerifyStatus().equals("10"))
-                            startActivity(new Intent(LoginActivity.this,MainActivity.class));
-                        else {
+                        if(data.getVerifyStatus().equals("10")){
+                            session.setLogin(true);
                             session.setAdmin(true);
                             startActivity(new Intent(LoginActivity.this, AdminActivity.class));
+                            finish();
+                        }else if(data.getVerifyStatus().equals("20")){
+                            startActivity(new Intent(LoginActivity.this, LoginApprove.class));
+                            finish();
+                        }else if(data.getVerifyStatus().equals("22")){
+                            startActivity(new Intent(LoginActivity.this, AdminBlogs.class));
+                            finish();
+                        }else if(data.getVerifyStatus().equals("24")){
+                            /*startActivity(new Intent(LoginActivity.this, Com.class));
+                            finish();*/
+                        }else if(data.getVerifyStatus().equals("26")){
+                            startActivity(new Intent(LoginActivity.this, ACM_List.class));
+                            finish();
+                        }else if(data.getVerifyStatus().equals("28")){
+                            startActivity(new Intent(LoginActivity.this, PMU.class));
+                            finish();
+                        }else if(data.getVerifyStatus().equals("30")){
+                            startActivity(new Intent(LoginActivity.this, RWC.class));
+                            finish();
+                        }else if(data.getVerifyStatus().equals("32")){
+                            startActivity(new Intent(LoginActivity.this, FatigueReportList.class));
+                            finish();
                         }
-                        finish();
+                        else if (data.getVerifyStatus().equals("3")){
+                            Global.diloge(LoginActivity.this,"Login Error","Your login request has been unapproved \n Please contact region admin for more detail. ");
+                        } else if (data.getVerifyStatus().equals("0")){
+                            Global.diloge(LoginActivity.this,"Login Request","Your login request is under process \n Please contact region admin for more detail. ");
+                        }
+                        else {
+                            if (data.getMember().equalsIgnoreCase("yes")){
+                            session.setLogin(true);
+                            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                            finish();}else {
+                                Toast.makeText(LoginActivity.this, "You are not ICPA member please become member", Toast.LENGTH_SHORT).show();
+                                startActivity(new Intent(LoginActivity.this, ICPAMemeberApplication.class));
+                            }
+                        }
                     }
                     else
                     {

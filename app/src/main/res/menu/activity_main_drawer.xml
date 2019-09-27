@@ -9,6 +9,10 @@
             android:icon="@drawable/ic_menu_manage"
             android:title="Edit Profile" />
         <item
+            android:id="@+id/nav_notification"
+            android:icon="@drawable/ic_notifications"
+            android:title="Notification" />
+        <item
             android:id="@+id/nav_update_email"
             android:icon="@drawable/ic_mail_black"
             android:title="Email Change Request" />

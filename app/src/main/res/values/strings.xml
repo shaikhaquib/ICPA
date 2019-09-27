@@ -3,7 +3,7 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Login</string>
     <string name="title_activity_login">sign in</string>
 
 
@@ -45,6 +45,9 @@
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
     <string name="internal_storage">Internal storage</string>
-
+    <string-array name="paymentMode">
+        <item>Test</item>
+        <item>Live</item>
+    </string-array>
 
 </resources>

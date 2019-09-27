@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1a377ff1-08a7-4ce7-95ba-14d7e446c19b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../app/src/main/java/com/s/icpa/Activity/APIs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../app/src/main/java/com/s/icpa/Activity/Change_Region.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../app/src/main/java/com/s/icpa/Activity/FlightRequestClander.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../app/src/main/java/com/s/icpa/AndroidMultiPartEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../app/src/main/java/com/s/icpa/AppController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../app/src/main/java/com/s/icpa/FileUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../app/src/main/java/com/s/icpa/HelperUtils/HelperUtilities.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../app/src/main/java/com/s/icpa/LocalStorageProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../app/src/main/java/com/s/icpa/Model/LoginModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../app/src/main/java/com/s/icpa/SQLiteHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../app/src/main/java/com/s/icpa/SessionManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../app/src/main/java/com/s/icpa/ViewDialog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../app/src/main/res/drawable/ic_icpa.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../app/src/main/res/drawable/ic_icpa_logo.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../app/src/main/res/layout/activity_change__region.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../app/src/main/res/layout/activity_flight_request_clander.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../app/src/main/res/layout/custom_loading_layout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../app/src/main/res/xml/network_security_config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../../app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../app/src/main/ic_launcher-web.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../../app/src/main/ic_launcher-web.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../app/src/main/java/com/s/icpa/Change_Password.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../app/src/main/java/com/s/icpa/Activity/Change_Password.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../app/src/main/java/com/s/icpa/Change_email.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../app/src/main/java/com/s/icpa/Activity/Change_email.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../app/src/main/java/com/s/icpa/ClaimFormPMU.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../app/src/main/java/com/s/icpa/Activity/ClaimFormPMU.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../app/src/main/java/com/s/icpa/ClaimfromRWC.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../app/src/main/java/com/s/icpa/Activity/ClaimfromRWC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../app/src/main/java/com/s/icpa/Complaint_form.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../app/src/main/java/com/s/icpa/Activity/Complaint_form.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../app/src/main/java/com/s/icpa/Contact.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../app/src/main/java/com/s/icpa/Activity/Contact.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../app/src/main/java/com/s/icpa/Edit_Profile.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../app/src/main/java/com/s/icpa/Activity/Edit_Profile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../app/src/main/java/com/s/icpa/FatigueReportForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../app/src/main/java/com/s/icpa/Activity/FatigueReportForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../app/src/main/java/com/s/icpa/Global.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../app/src/main/java/com/s/icpa/Global.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../app/src/main/java/com/s/icpa/ICPAMemeberApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../app/src/main/java/com/s/icpa/Activity/ICPAMemeberApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../app/src/main/java/com/s/icpa/LoginActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../app/src/main/java/com/s/icpa/Activity/LoginActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../app/src/main/java/com/s/icpa/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../app/src/main/java/com/s/icpa/Activity/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../app/src/main/java/com/s/icpa/MemberRegistraion.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../app/src/main/java/com/s/icpa/Activity/MemberRegistraion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../app/src/main/java/com/s/icpa/Notification.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../app/src/main/java/com/s/icpa/Activity/Notification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../app/src/main/java/com/s/icpa/Profile.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../app/src/main/java/com/s/icpa/Activity/Profile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../app/src/main/java/com/s/icpa/TravelForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../app/src/main/java/com/s/icpa/Activity/TravelForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../app/src/main/res/drawable/ic_launcher_foreground.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../app/src/main/res/drawable/ic_launcher_foreground.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../app/src/main/res/layout/activity_change_email.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../app/src/main/res/layout/activity_change_email.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../app/src/main/res/layout/activity_change_password.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../app/src/main/res/layout/activity_change_password.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../app/src/main/res/layout/activity_claim_form_pmu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../app/src/main/res/layout/activity_claim_form_pmu.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../app/src/main/res/layout/activity_claimfrom_rwc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../app/src/main/res/layout/activity_claimfrom_rwc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../app/src/main/res/layout/activity_complaint_form.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../app/src/main/res/layout/activity_complaint_form.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../app/src/main/res/layout/activity_conatact.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../app/src/main/res/layout/activity_conatact.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../app/src/main/res/layout/activity_edit_profile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../app/src/main/res/layout/activity_edit_profile.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../app/src/main/res/layout/activity_fatigue_report_form.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../app/src/main/res/layout/activity_fatigue_report_form.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../app/src/main/res/layout/activity_icpamemeber_application.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../app/src/main/res/layout/activity_icpamemeber_application.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../app/src/main/res/layout/activity_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../app/src/main/res/layout/activity_login.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../app/src/main/res/layout/activity_member_registraion.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../app/src/main/res/layout/activity_member_registraion.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../app/src/main/res/layout/activity_notification.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../app/src/main/res/layout/activity_notification.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../app/src/main/res/layout/activity_profile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../app/src/main/res/layout/activity_profile.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../app/src/main/res/layout/activity_travel_form.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../app/src/main/res/layout/activity_travel_form.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../app/src/main/res/layout/app_bar_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../app/src/main/res/layout/app_bar_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../app/src/main/res/layout/content_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../app/src/main/res/layout/content_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../app/src/main/res/layout/nav_header_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../app/src/main/res/layout/nav_header_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../app/src/main/res/menu/activity_main_drawer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../app/src/main/res/menu/activity_main_drawer.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../../app/src/main/res/mipmap-hdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../app/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../../app/src/main/res/mipmap-hdpi/ic_launcher_round.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../../app/src/main/res/mipmap-mdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../app/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../../app/src/main/res/mipmap-mdpi/ic_launcher_round.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../../app/src/main/res/mipmap-xhdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../../app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../../app/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../../app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../../app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../../app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../app/src/main/res/values/strings.xml" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view />
+      </state>
+    </system>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="10" />
+    <option name="y" value="20" />
+    <option name="width" value="1346" />
+    <option name="height" value="688" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
+    <property name="device.picker.selection" value="RZ8M30YSN0V" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="not.eligible.for.single.variant.sync" value="true" />
+    <property name="sync.plugin.last.upgrade.timestamp" value="1563384402288" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="app" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1a377ff1-08a7-4ce7-95ba-14d7e446c19b" name="Default Changelist" comment="" />
+      <created>1562996467689</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1562996467689</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <layout>
+      <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="1" />
+      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.3207262" />
+      <window_info id="Structure" order="3" side_tool="true" />
+      <window_info id="Build Variants" order="4" side_tool="true" />
+      <window_info id="Image Layers" order="5" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info id="Resources Explorer" order="7" />
+      <window_info id="Favorites" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="0" />
+      <window_info anchor="bottom" id="TODO" order="1" />
+      <window_info anchor="bottom" id="Android Profiler" order="2" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="3" />
+      <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" />
+      <window_info anchor="bottom" id="Build" order="5" visible="true" weight="0.29761904" />
+      <window_info anchor="bottom" id="Logcat" order="6" />
+      <window_info anchor="bottom" id="Debug" order="7" />
+      <window_info anchor="bottom" id="Run" order="8" />
+      <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
+      <window_info anchor="right" id="Capture Analysis" order="1" />
+      <window_info anchor="right" id="Gradle" order="2" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info anchor="right" id="Palette&#9;" order="4" />
+    </layout>
+  </component>
+</project>

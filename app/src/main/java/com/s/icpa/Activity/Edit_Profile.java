@@ -182,7 +182,7 @@ public class Edit_Profile extends AppCompatActivity {
     }
 
     private void updateLabel(EditText editText) {
-        String myFormat = "MM/dd/yy"; //In which you need put here
+        String myFormat = "dd/MM/yy"; //In which you need put here
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
 
         editText.setText(sdf.format(myCalendar.getTime()));
@@ -194,7 +194,8 @@ public class Edit_Profile extends AppCompatActivity {
 
         name.setText( user.get("name"));
         batch_no.setText( user.get("batch_no"));
-        edtanniversry.setText( user.get("dob   "));
+        edtBirthday.setText(user.get("dob"));
+        edtanniversry.setText( user.get("wedding_date"));
         email.setText( user.get("email"));
         oemail.setText( user.get("work_email"));
         mobile.setText( user.get("mobile"));
@@ -346,7 +347,7 @@ public class Edit_Profile extends AppCompatActivity {
                         }
                         builder.setCancelable(false);
                         builder.setTitle("Success")
-                                .setMessage("You have succesfully Update your profile")
+                                .setMessage("You have successfully Update your profile")
                                 .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog, int which) {
                                         dialog.dismiss();

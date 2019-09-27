@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -12,22 +11,23 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:paddingBottom="30dp">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:padding="15dp"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:padding="15dp">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
                     android:layout_weight="1"
                     android:fontFamily="sans-serif-thin"
-                    android:textSize="20sp"
-                    android:layout_marginBottom="16dp"
-                    android:text="Personal Travel Form" />
-
+                    android:text="Personal Travel Form"
+                    android:textSize="20sp" />
 
 
                 <android.support.design.widget.TextInputLayout
@@ -44,6 +44,7 @@
                         android:singleLine="true" />
 
                 </android.support.design.widget.TextInputLayout>
+
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
@@ -58,6 +59,7 @@
                         android:singleLine="true" />
 
                 </android.support.design.widget.TextInputLayout>
+
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
@@ -72,6 +74,21 @@
                         android:singleLine="true" />
 
                 </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Official Email ID"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:singleLine="true" />
+
+                </android.support.design.widget.TextInputLayout>
+
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
@@ -102,36 +119,60 @@
                         android:singleLine="true" />
 
                 </android.support.design.widget.TextInputLayout>
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:visibility="visible">
 
-                    <EditText
-                        android:id="@+id/flighttype"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="Flight type"
-                        android:inputType="text"
-                        android:maxLines="1"
-                        android:singleLine="true" />
-
-                </android.support.design.widget.TextInputLayout>
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <EditText
-                        android:id="@+id/dateoftravel"
+                        android:id="@+id/Sector"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Date of travel"
+                        android:hint="Sector"
                         android:inputType="text"
                         android:maxLines="1"
                         android:singleLine="true" />
 
                 </android.support.design.widget.TextInputLayout>
-                       <android.support.design.widget.TextInputLayout
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical">
+
+                    <android.support.design.widget.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="8">
+
+                        <EditText
+                            android:id="@+id/dateoftravel"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:editable="false"
+                            android:hint="Date of travel"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:singleLine="true" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <ImageButton
+                        android:id="@+id/btndateoftravel"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:gravity="center"
+                        android:src="@drawable/ic_school_calendar"
+                        android:tint="#504C4C" />
+
+
+                </LinearLayout>
+
+
+                <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
@@ -145,6 +186,7 @@
                         android:singleLine="true" />
 
                 </android.support.design.widget.TextInputLayout>
+
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
@@ -160,6 +202,103 @@
 
                 </android.support.design.widget.TextInputLayout>
 
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="6dp"
+                    android:gravity="left"
+                    android:text="Weekly off" />
+
+                <RadioGroup
+                    android:id="@+id/RgWeekOff"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="6dp"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/Married"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="No" />
+
+                    <RadioButton
+                        android:id="@+id/Single"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Yes" />
+
+
+                </RadioGroup>
+
+                <LinearLayout
+                    android:id="@+id/layAnnie"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+
+                    <android.support.design.widget.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="8">
+
+                        <EditText
+                            android:id="@+id/edtWeekoffdate"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="date"
+                            android:maxLines="1"
+                            android:singleLine="true" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <ImageButton
+                        android:id="@+id/date"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:src="@drawable/ic_school_calendar"
+                        android:tint="#504C4C" />
+
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="6dp"
+                    android:gravity="left"
+                    android:text="Flight Type" />
+
+
+                <RadioGroup
+                    android:id="@+id/flighttype"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="6dp"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/Domestic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Domestic " />
+
+                    <RadioButton
+                        android:id="@+id/International"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="International" />
+
+                </RadioGroup>
+
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -173,6 +312,13 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="6dp"
                     android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/A-320"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="A-320" />
+
 
                     <RadioButton
                         android:id="@+id/B-777"
@@ -191,11 +337,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="B-747" />
-                    <RadioButton
-                        android:id="@+id/A-320"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="A-320" />
 
 
                 </RadioGroup>
@@ -209,16 +350,14 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:background="@color/primaryBlue"
-            android:textColor="@color/colorInverted"
+            android:fontFamily="sans-serif"
             android:text="Request"
-            android:textSize="18sp"
             android:textAllCaps="false"
-            android:fontFamily="sans-serif"/>
-
+            android:textColor="@color/colorInverted"
+            android:textSize="18sp" />
 
 
     </RelativeLayout>
-
 
 
 </LinearLayout>

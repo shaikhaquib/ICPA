@@ -31,7 +31,7 @@
                     android:layout_height="100dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginBottom="20dp"
-                    app:srcCompat="@drawable/logo" />
+                    android:src="@drawable/ic_icpa" />
 
 
                 <android.support.v7.widget.CardView
@@ -101,19 +101,6 @@
 
                         </LinearLayout>
 
-                        <android.support.design.widget.TextInputLayout
-                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-
-                            <EditText
-                                android:id="@+id/address"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:hint="Address"
-                                android:inputType="text" />
-
-                        </android.support.design.widget.TextInputLayout>
 
 
                         <TextView
@@ -121,7 +108,7 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="6dp"
                             android:gravity="left"
-                            android:text="Merital status" />
+                            android:text="Marital status" />
 
                         <RadioGroup
                             android:id="@+id/RgMeritalsts"
@@ -253,6 +240,19 @@
                                 android:singleLine="true" />
 
                         </android.support.design.widget.TextInputLayout>
+                        <android.support.design.widget.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <EditText
+                                android:id="@+id/address"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Address"
+                                android:inputType="text" />
+
+                        </android.support.design.widget.TextInputLayout>
 
 
                     </LinearLayout>
@@ -363,6 +363,44 @@
 
 
                         </RadioGroup>
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="6dp"
+                            android:gravity="left"
+                            android:text="Current Status " />
+
+
+                        <RadioGroup
+                            android:id="@+id/radiotstatus"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="6dp"
+                            android:orientation="vertical">
+
+                            <RadioButton
+                                android:id="@+id/Permanent"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Permanent" />
+
+                            <RadioButton
+                                android:id="@+id/caontract_p2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Fixed term contract P2" />
+
+                            <RadioButton
+                                android:id="@+id/contract_commanders"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="contract commanders" />
+
+
+                        </RadioGroup>
+
 
 
                         <TextView

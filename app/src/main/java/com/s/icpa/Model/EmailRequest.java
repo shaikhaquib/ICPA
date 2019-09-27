@@ -3,7 +3,10 @@ package com.s.icpa.Model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class EmailRequest {
+import java.io.Serializable;
+
+public class EmailRequest implements Serializable {
+
 
     @SerializedName("id")
     @Expose
@@ -37,7 +40,7 @@ public class EmailRequest {
     private String weddingDate;
     @SerializedName("active_date")
     @Expose
-    private String activeDate;
+    private Object activeDate;
     @SerializedName("updated_date")
     @Expose
     private String updatedDate;
@@ -53,6 +56,9 @@ public class EmailRequest {
     @SerializedName("new_region")
     @Expose
     private String newRegion;
+    @SerializedName("reason")
+    @Expose
+    private String reason;
 
     public String getId() {
         return id;
@@ -134,11 +140,11 @@ public class EmailRequest {
         this.weddingDate = weddingDate;
     }
 
-    public String getActiveDate() {
+    public Object getActiveDate() {
         return activeDate;
     }
 
-    public void setActiveDate(String activeDate) {
+    public void setActiveDate(Object activeDate) {
         this.activeDate = activeDate;
     }
 
@@ -180,6 +186,14 @@ public class EmailRequest {
 
     public void setNewRegion(String newRegion) {
         this.newRegion = newRegion;
+    }
+
+    public String getReason() {
+        return reason;
+    }
+
+    public void setReason(String reason) {
+        this.reason = reason;
     }
 
 }

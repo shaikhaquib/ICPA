@@ -139,7 +139,7 @@ public class Change_Region extends AppCompatActivity {
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map <String,String> param = new HashMap<String,String>();
                 param.put("customer_id",Global.customer_id);
-                param.put("region",strregion);
+                param.put("new_region",strregion);
                 param.put("name",name.getText().toString());
                 param.put("old_region",oldstrregion);
                 param.put("reason",reason.getText().toString());

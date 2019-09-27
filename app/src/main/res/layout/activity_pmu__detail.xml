@@ -120,6 +120,27 @@
                         android:layout_column="2"
                         android:textColor="#ff304073" />
                 </TableRow>
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+
+                    <TextView
+                        android:layout_width="150.0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:padding="@dimen/margin_16"
+                        android:text="Document link"
+                        android:textColor="#ff6783b8"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/link"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="2"
+                        android:autoLink="all"
+                        android:textColor="#ff304073" />
+                </TableRow>
 
 
 

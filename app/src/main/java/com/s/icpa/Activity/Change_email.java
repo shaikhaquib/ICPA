@@ -136,7 +136,7 @@ public class Change_email extends AppCompatActivity {
                 Map <String,String> param = new HashMap<String,String>();
                 param.put("customer_id",Global.customer_id);
                 param.put("region",strregion);
-                param.put("email",email.getText().toString());
+                param.put("new_email",email.getText().toString());
                 param.put("reason",reason.getText().toString());
                 return param;
             }

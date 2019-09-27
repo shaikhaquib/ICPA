@@ -2,11 +2,13 @@ package com.s.icpa.Activity;
 
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.app.assist.AssistStructure;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.DatePicker;
@@ -25,27 +27,31 @@ import com.s.icpa.AppController;
 import com.s.icpa.Global;
 import com.s.icpa.HelperUtils.HelperUtilities;
 import com.s.icpa.Model.LoginModel;
+import com.s.icpa.Qpay.OrderInfo;
+import com.s.icpa.Qpay.PaymentProcessing;
 import com.s.icpa.R;
 import com.s.icpa.ViewDialog;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
+import java.util.UUID;
 
 public class MemberRegistraion extends AppCompatActivity {
     ImageButton birthday, anniversry;
     Calendar myCalendar = Calendar.getInstance();
     EditText edtBirthday, edtanniversry, name, email, oemail, mobile, address, password, cpassword, sapno,batch_no;
     LinearLayout layAnnie;
-    private RadioGroup RgMeritalsts, Rgcurrentstats, RgDesignation, rgRegion,RgMemeberstatus;
+    private RadioGroup RgMeritalsts, Rgcurrentstats, RgDesignation, rgRegion,RgMemeberstatus,radiotstatus;
 
 
-    String strMeritalstatus = "0", strcurrentstatus = ",", strDesignation = ",", strregion = ",", strMemberstatus="0";
+    String strMeritalstatus = "0", strcurrentstatus = ",", strDesignation = ",", strregion = ",", strMemberstatus="0" , strradiotstatus;
 
 
     @Override
@@ -67,6 +73,7 @@ public class MemberRegistraion extends AppCompatActivity {
         cpassword = findViewById(R.id.txtConfirmPassword);
         Rgcurrentstats = findViewById(R.id.radioCurrentstatus);
         RgMemeberstatus = findViewById(R.id.radioMember);
+        radiotstatus = findViewById(R.id.radiotstatus);
         rgRegion = findViewById(R.id.Radio_region);
         RgDesignation = findViewById(R.id.radioDesignation);
         layAnnie = findViewById(R.id.layAnnie);
@@ -175,12 +182,18 @@ public class MemberRegistraion extends AppCompatActivity {
                 strregion = radioButton.getText().toString();
             }
         });
+        radiotstatus.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                RadioButton radioButton = findViewById(checkedId);
+                strradiotstatus = radioButton.getText().toString();
+            }
+        });
     }
 
     private void updateLabel(EditText editText) {
-        String myFormat = "MM/dd/yyyy"; //In which you need put here
+        String myFormat = "dd/MM/yyyy"; //In which you need put here
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
-
         editText.setText(sdf.format(myCalendar.getTime()));
     }
 
@@ -272,7 +285,7 @@ public class MemberRegistraion extends AppCompatActivity {
                         }
                         builder.setCancelable(false);
                         builder.setTitle("Success")
-                                .setMessage("You have succesfully register")
+                                .setMessage("You have successfully register")
                                 .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog, int which) {
                                         dialog.dismiss();
@@ -322,9 +335,174 @@ public class MemberRegistraion extends AppCompatActivity {
                 param.put("marital_status",strMeritalstatus);
                 param.put("wedding_date",edtanniversry.getText().toString());
                 param.put("password",password.getText().toString());
+                param.put("emp_status",strradiotstatus);
                 return param;
             }
     };
         AppController.getInstance().addToRequestQueue(stringRequest);
     }
+
+
+/*
+    public void createOrderInfo() {
+
+
+        */
+/**
+         * @class OrderInfo - Contains required variables to create a new order object.
+         *//*
+
+
+        OrderInfo objOrderInfo = new OrderInfo();
+
+
+        */
+/**
+         * @param setMode
+         *  Test – Test mode. QPay will not send transaction to bank gateway.
+         *  Live – for testing in live mode. Transaction request will be sent to bank.
+         *//*
+
+
+        objOrderInfo.setMode("test");
+
+        */
+/**
+         * @param setQpayID - Combination of the Qpay ID issued by QPayIndia and base64 value of order amount separated by ` symbol.
+         *//*
+
+
+        String orderAmount = "100";
+
+        byte[] byt = new byte[0];
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) {
+            byt = orderAmount.getBytes(StandardCharsets.US_ASCII);
+        }
+        String qpayId = "icpaapiacc" + "`" + new String(Base64.encodeToString(byt, Base64.DEFAULT));
+        objOrderInfo.setQpayID(qpayId);
+
+        */
+/**
+         * @param setQpayPWD - The Password issued by QPayIndia.
+         *//*
+
+
+        objOrderInfo.setQpayPWD("hgf!1234");
+
+        */
+/**
+         * @param setSubmerchantID - Submerchant ID.
+         *//*
+
+        objOrderInfo.setSubmerchantID(submerchantid.getText().toString());
+
+        */
+/**
+         * @param setSubmerchantName - Name of Submerchant.
+         *//*
+
+
+        objOrderInfo.setSubmerchantName(submerchantname.getText().toString());
+
+
+        */
+/**
+         * @param name -  Name of the customer.
+         *//*
+
+
+        objOrderInfo.setName(name.getText().toString());
+
+        */
+/**
+         * @param setAddress - Address of the customer.
+         *//*
+
+
+        objOrderInfo.setAddress(address.getText().toString());
+
+        */
+/**
+         * @param  setCity - City of the customer.
+         *//*
+
+
+        objOrderInfo.setCity(strregion);
+
+        */
+/**
+         * @param setState - State of the customer.
+         *//*
+
+
+        objOrderInfo.setState(strregion);
+
+        */
+/**
+         * @param setCountry - Country of the customer.
+         *//*
+
+
+        objOrderInfo.setCountry(country.getText().toString());
+
+        */
+/**
+         * @param setPostal_code - Postal code of the customer.
+         *//*
+
+
+        objOrderInfo.setPostal_code(postal_code.getText().toString());
+
+        */
+/**
+         * @param setPhone - Phone of the customer.
+         *//*
+
+
+        objOrderInfo.setPhone(phone.getText().toString());
+
+        */
+/**
+         * @param setEmail - Email ID of the customer.
+         *//*
+
+
+        objOrderInfo.setEmail(email.getText().toString());
+
+        */
+/** @param setOrderID - A unique Transaction ID generated on the developers side.
+         *//*
+
+
+        objOrderInfo.setOrderID(UUID.randomUUID().toString().replace("-", "").substring(0, 16));
+
+        */
+/** @param setPaymentOption - C / D / N / U (C = Credit Card, D = Debit Card, N = Net banking, U - UPI).
+         *//*
+
+
+        objOrderInfo.setPaymentOption("C,D,N,U");
+
+        */
+/** @param setCurrencyCode - ISO Code for the currency of the payment - INR
+         *//*
+
+
+        objOrderInfo.setCurrencyCode("INR");
+
+        */
+/** @param setResponseActivity - A Response Class need to be created on the developers side.
+         *//*
+
+
+        objOrderInfo.setResponseActivity("com.example.macbook.qpaysdk.PaymentResponse");
+
+        Intent i = new Intent(getApplicationContext(), PaymentProcessing.class);
+        i.putExtra("OrderInfo", objOrderInfo);
+        startActivity(i);
+        finish();
+
+    }
+*/
+
 }

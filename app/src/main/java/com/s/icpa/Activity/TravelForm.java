@@ -1,6 +1,7 @@
 package com.s.icpa.Activity;
 
 import android.app.AlertDialog;
+import android.app.DatePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
@@ -9,7 +10,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -27,22 +30,29 @@ import com.s.icpa.ViewDialog;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 public class TravelForm extends AppCompatActivity {
 
-    EditText  name, email, mobile, staffno, flightno, dateoftravel, leavesanctionedfrom,leavesanctionedto,flighttype;
-    private RadioGroup  Rgcurrentstats;
+    EditText  name, email, mobile, staffno, flightno, dateoftravel, Sector,leavesanctionedfrom,leavesanctionedto ,edtWeekOff;
+    private RadioGroup  Rgcurrentstats ,flighttype , rgWeekoff;
 
-    String  strcurrentstatus = ",";
+    String  strcurrentstatus = "," ,strflighttype = "," , strWeekoff = "No";
 
-    Button btnSubmit;
+    Button btnSubmit ;
+    ImageButton btndateoftravel ,btndate;
+    Calendar myCalendar = Calendar.getInstance();
+    LinearLayout layAnnie;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_travel_form);
+        layAnnie = findViewById(R.id.layAnnie);
 
         name = findViewById(R.id.name);
         email = findViewById(R.id.email);
@@ -54,6 +64,81 @@ public class TravelForm extends AppCompatActivity {
         leavesanctionedfrom = findViewById(R.id.leavesanctionedfrom);
         leavesanctionedto = findViewById(R.id.leavesanctionedto);
         btnSubmit = findViewById(R.id.btnSubmit);
+        btndateoftravel = findViewById(R.id.btndateoftravel);
+        btndate = findViewById(R.id.date);
+        Sector = findViewById(R.id.Sector);
+        edtWeekOff = findViewById(R.id.edtWeekoffdate);
+        rgWeekoff = findViewById(R.id.RgWeekOff);
+
+
+        final DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
+
+            @Override
+            public void onDateSet(DatePicker view, int year, int monthOfYear,
+                                  int dayOfMonth) {
+                // TODO Auto-generated method stub
+                myCalendar.set(Calendar.YEAR, year);
+                myCalendar.set(Calendar.MONTH, monthOfYear);
+                myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+
+                String myFormat = "dd/MM/yyyy"; //In which you need put here
+                SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
+                dateoftravel.setText(sdf.format(myCalendar.getTime()));
+
+            }
+
+        };
+        final DatePickerDialog.OnDateSetListener weekofdate = new DatePickerDialog.OnDateSetListener() {
+
+            @Override
+            public void onDateSet(DatePicker view, int year, int monthOfYear,
+                                  int dayOfMonth) {
+                // TODO Auto-generated method stub
+                myCalendar.set(Calendar.YEAR, year);
+                myCalendar.set(Calendar.MONTH, monthOfYear);
+                myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+
+                String myFormat = "dd/MM/yyyy"; //In which you need put here
+                SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
+                edtWeekOff.setText(sdf.format(myCalendar.getTime()));
+                strWeekoff = sdf.format(myCalendar.getTime());
+            }
+
+        };
+
+        btndateoftravel.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                new DatePickerDialog(TravelForm.this, date, myCalendar
+                        .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
+                        myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+            }
+        });
+        btndate.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                new DatePickerDialog(TravelForm.this, weekofdate, myCalendar
+                        .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
+                        myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+            }
+        });
+
+
+
+        rgWeekoff.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == R.id.Married) {
+                    layAnnie.setVisibility(View.GONE);
+                } else {
+                    layAnnie.setVisibility(View.VISIBLE);
+                }
+            }
+        });
 
 
 
@@ -63,6 +148,13 @@ public class TravelForm extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 RadioButton radioButton = findViewById(checkedId);
                 strcurrentstatus = radioButton.getText().toString();
+            }
+        });
+        flighttype.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                RadioButton radioButton = findViewById(checkedId);
+                strflighttype = radioButton.getText().toString();
             }
         });
 
@@ -86,8 +178,8 @@ public class TravelForm extends AppCompatActivity {
             email.setError("Please enter a valid email");
         }else  if (HelperUtilities.isEmptyOrNull(flightno.getText().toString())) {
             flightno.setError("Please enter your Flight no");
-        }else  if (HelperUtilities.isEmptyOrNull(flighttype.getText().toString())) {
-            flightno.setError("Please enter your flight type");
+        }else  if (HelperUtilities.isEmptyOrNull(Sector.getText().toString())) {
+            Sector.setError("Please enter your Flight no");
         }else if (HelperUtilities.isEmptyOrNull(staffno.getText().toString())) {
             staffno.setError("Please enter your Staff no");
         }else if (HelperUtilities.isEmptyOrNull(mobile.getText().toString())) {
@@ -168,7 +260,7 @@ public class TravelForm extends AppCompatActivity {
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map <String,String> param = new HashMap<String,String>();
                 param.put("customer_id",Global.customer_id);
-                param.put("flight_type",flighttype.getText().toString());
+                param.put("flight_type",strflighttype);
                 param.put("flight_no",flightno.getText().toString());
                 param.put("travel_date",dateoftravel.getText().toString());
                 param.put("staff_no",staffno.getText().toString());
@@ -178,6 +270,8 @@ public class TravelForm extends AppCompatActivity {
                 param.put("leave_to",leavesanctionedto.getText().toString());
                 param.put("current_fleet",strcurrentstatus);
                 param.put("region",Global.Region);
+                param.put("sector",Sector.getText().toString());
+                param.put("weekly_off",strWeekoff);
 
                 return param;
             }

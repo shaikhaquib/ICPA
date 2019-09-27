@@ -5,17 +5,24 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
+import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 
 import com.s.icpa.AndroidMultiPartEntity;
 import com.s.icpa.FileUtils;
@@ -49,6 +56,7 @@ public class ClaimfromRWC extends AppCompatActivity {
     ImageButton button ;
     private String filePath;
     private static final String TAG = "ClaimfromRWC";
+    RecyclerView rvDocument;
 
     EditText name,designation,sapno,dopmu;
     Button submitpmu;
@@ -94,6 +102,11 @@ public class ClaimfromRWC extends AppCompatActivity {
 
 
 
+        rvDocument = findViewById(R.id.rvDocument);
+        rvDocument.setHasFixedSize(true);
+        rvDocument.setLayoutManager(new LinearLayoutManager(this, LinearLayout.HORIZONTAL,false));
+
+
         // Date Picker
 
 
@@ -107,7 +120,7 @@ public class ClaimfromRWC extends AppCompatActivity {
                 myCalendar.set(Calendar.MONTH, monthOfYear);
                 myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
 
-                String myFormat = "MM/dd/yyyy"; //In which you need put here
+                String myFormat = "dd/MM/yyyy"; //In which you need put here
                 SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
 
                 dopmu.setText(sdf.format(myCalendar.getTime()));
@@ -150,6 +163,37 @@ public class ClaimfromRWC extends AppCompatActivity {
             }
         });
 
+        rvDocument.setAdapter(new RecyclerView.Adapter() {
+            @NonNull
+            @Override
+            public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+                return new Holder(LayoutInflater.from(ClaimfromRWC.this).inflate(R.layout.doucument_item, viewGroup, false));
+            }
+
+            @Override
+            public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
+
+                Holder holder = (Holder)viewHolder;
+
+                File file = new File(String.valueOf(arrayList.get(i)));
+                holder.filename.setText(file.getName());
+
+            }
+
+            @Override
+            public int getItemCount() {
+                return arrayList.size();
+            }
+            class Holder extends RecyclerView.ViewHolder {
+                TextView filename ;
+                public Holder(@NonNull View itemView) {
+                    super(itemView);
+                    filename =  itemView.findViewById(R.id.filename);
+                }
+            }
+        });
+
+
     }
 
 
@@ -175,12 +219,14 @@ public class ClaimfromRWC extends AppCompatActivity {
 
                                 Log.d(TAG, "onActivityResult: Multiple File Selected"+ path);
                                 arrayList.add(imageUri);
+                                rvDocument.getAdapter().notifyDataSetChanged();
 
 
                             } catch (Exception e) {
                                 Log.e(TAG, "File select error", e);
                             }
                         }
+
                     } else if (data.getData() != null) {
                         //do something with the image (save it to some directory or whatever you need to do with it here)
                         final Uri uri = data.getData();
@@ -191,6 +237,7 @@ public class ClaimfromRWC extends AppCompatActivity {
                             Log.d("Single File Selected", path);
 
                             arrayList.add(uri);
+                            rvDocument.getAdapter().notifyDataSetChanged();
 
                         } catch (Exception e) {
                             Log.e(TAG, "File select error", e);
@@ -218,50 +265,37 @@ public class ClaimfromRWC extends AppCompatActivity {
         private String uploadFile() {
             String responseString = null;
 
-            HttpClient httpclient = new DefaultHttpClient();
-            HttpPost httppost = new HttpPost(APIs.rwc);
+            String charset = "UTF-8";
+            String requestURL = APIs.rwc;
+
 
             try {
-                AndroidMultiPartEntity entity = new AndroidMultiPartEntity(
-                        new AndroidMultiPartEntity.ProgressListener() {
-
-                            @Override
-                            public void transferred(long num) {
-                            }
-                        });
                 //Log.d("file path", filePath);
+
+
+
+
+
+                AndroidMultiPartEntity multipart = new AndroidMultiPartEntity(requestURL, charset);
+                multipart.addFormField("customer_id", Global.customer_id);
+                multipart.addFormField("designation", designation.getText().toString());
+                multipart.addFormField("name"       , name.getText().toString());
+                multipart.addFormField("region"     , strregion);
+                multipart.addFormField("sap_no"     , sapno.getText().toString());
+
 
                 for (int i = 0; i < arrayList.size(); i++) {
 
                     try {
-                        String path = FileUtils.getPath(ClaimfromRWC.this, arrayList.get(i));
-                        File sourceFile = new File(path);
-                        entity.addPart("document[" + i + "]", new FileBody(sourceFile));
+                        multipart.addFilePart("upload[" + i + "]", FileUtils.getFile(ClaimfromRWC.this, arrayList.get(i)));
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
 
 
                 }
-                entity.addPart("customer_id", new StringBody(Global.customer_id));
-                entity.addPart("designation", new StringBody(designation.getText().toString()));
-                entity.addPart("name", new StringBody(name.getText().toString()));
-                entity.addPart("region", new StringBody(strregion));
-                entity.addPart("sap_no", new StringBody(sapno.getText().toString()));
-                httppost.setEntity(entity);
+                responseString = multipart.finish(); // response from server.
 
-                // Making server call
-                HttpResponse response = httpclient.execute(httppost);
-                HttpEntity r_entity = response.getEntity();
-
-                int statusCode = response.getStatusLine().getStatusCode();
-                if (statusCode == 200) {
-                    // Server response
-                    responseString = EntityUtils.toString(r_entity);
-                } else {
-                    responseString = "Error occurred! Http Status Code: "
-                            + statusCode;
-                }
 
             } catch (ClientProtocolException e) {
                 responseString = e.toString();

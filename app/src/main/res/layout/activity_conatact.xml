@@ -30,15 +30,106 @@
                     android:text="Contact form" />
 
 
-
-
-                <TextView
-                    android:id="@+id/txtMatchError"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textColor="@color/colorDanger"
-                    android:gravity="center" />
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                        <EditText
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Name"
+                            android:padding="8dp"
+                            android:inputType="textPersonName" />
+
+
+                    </android.support.design.widget.TextInputLayout>
+
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                        <EditText
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Email"
+                            android:padding="8dp"
+                            android:inputType="textPersonName" />
+
+
+                    </android.support.design.widget.TextInputLayout>
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                        <EditText
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Contact no"
+                            android:padding="8dp"
+                            android:inputType="textPersonName" />
+
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                        <EditText
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Subject"
+                            android:padding="8dp"
+                            android:inputType="textPersonName" />
+
+
+                    </android.support.design.widget.TextInputLayout>
+
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+
+                    <EditText
+                        android:layout_width="fill_parent"
+                        android:layout_height="150dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        android:gravity="top"
+                        android:hint="Your Message"
+                        android:fitsSystemWindows="true"
+                        android:breakStrategy="balanced"
+                        android:inputType="textMultiLine"
+                        android:singleLine="false"
+                        android:padding="5dp" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <Button
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:backgroundTint="@color/primaryBlue"
+                        android:elevation="4dp"
+                        android:paddingLeft="70dp"
+                        android:paddingRight="70dp"
+                        android:text="Submit"
+                        android:textColor="#fff" />
+                </LinearLayout>
 
             </LinearLayout>
         </ScrollView>

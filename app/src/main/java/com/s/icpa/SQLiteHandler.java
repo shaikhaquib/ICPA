@@ -31,7 +31,7 @@ public class SQLiteHandler extends SQLiteOpenHelper {
     private static final String KEY_NAME = "name";
     private static final String KEY_BATCH_NO = "batch_no";
     private static final String KEY_DOB = "dob";
-        private static final String KEY_CURRENT_FLEET = "current_fleet";
+    private static final String KEY_CURRENT_FLEET = "current_fleet";
     private static final String KEY_SAP_NO = "sap_no";
     private static final String KEY_WORK_EMAIL = "work_email";
     private static final String KEY_ADDRESS = "address";

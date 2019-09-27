@@ -43,7 +43,7 @@ public class Profile extends AppCompatActivity {
 
         name          .setText("Name :"+user.get("name"));
         Batch_no      .setText("Batch_no :"+user.get("batch_no"));
-        dob           .setText("DOB :"+user.get("dob   "));
+        dob           .setText("DOB :"+user.get("dob"));
         email         .setText("Email :"+user.get("email"));
         work_email    .setText("Work Email :"+user.get("work_email"));
         mobile        .setText("Mobile :"+user.get("mobile"));

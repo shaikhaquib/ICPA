@@ -16,6 +16,7 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.SeekBar;
 import android.widget.TimePicker;
 
 import com.android.volley.AuthFailureError;
@@ -39,10 +40,12 @@ import java.util.Map;
 public class FatigueReportForm extends AppCompatActivity {
 
     LinearLayout Fr1, Fr2, Fr3, Fr4;
-    EditText name, empno, local_report_date, local_report_time, duty_desc,
+    EditText name, empno, local_report_date, local_report_time, duty_desc,edtnap,
             fof, fot, hrt, aircraft_type, aircraft_no, location, description, awake, sleep,other_comment,what_could_be_done,what_did_u_do;
-    RadioGroup rgfpd, rghotel, rghome,rgdisrupt,rgpersonal;
-    String strfpd, strhome, strhotel,strdisrupt,strpersonal;
+    RadioGroup rgfpd, rghotel, rghome,rgdisrupt,rgpersonal,rgnap;
+    String strfpd, strhome, strhotel,strdisrupt,strpersonal,howyoufelt = "30" ,strnap = "No";
+    SeekBar seekbar;
+
 
     ImageButton btn_report_date, btn_report_time;
 
@@ -58,7 +61,23 @@ public class FatigueReportForm extends AppCompatActivity {
 
         name = findViewById(R.id.name);
         empno = findViewById(R.id.empno);
+        edtnap = findViewById(R.id.edtnap);
+        seekbar = findViewById(R.id.seekbar);
+        rgnap = findViewById(R.id.rgnap);
+        rgnap.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
 
+                RadioButton radioButton = findViewById(checkedId);
+                if (radioButton.getTag().toString().equals("yes")){
+                    edtnap.setVisibility(View.VISIBLE);
+                    strnap = radioButton.getText().toString();
+                }else {
+                    edtnap.setVisibility(View.GONE);
+                    strnap = radioButton.getText().toString();
+                }
+            }
+        });
 
         //fr2
 
@@ -178,10 +197,28 @@ public class FatigueReportForm extends AppCompatActivity {
             }
         });
 
+
+        seekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                howyoufelt =  String.valueOf(progress);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
     }
 
     private void updateLabel(EditText editText) {
-        String myFormat = "MM/dd/yyyy"; //In which you need put here
+        String myFormat = "dd/MM/yyyy"; //In which you need put here
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
 
         editText.setText(sdf.format(myCalendar.getTime()));
@@ -230,6 +267,11 @@ public class FatigueReportForm extends AppCompatActivity {
         }else if (other_comment.getText().toString().isEmpty()) {
             other_comment.setError("Field Required");
         } else {
+            if (strnap.equals("YES")){
+                strnap = edtnap.getText().toString();
+            }else {
+                strnap = "No";
+            }
             submitDATA();
         }
     }
@@ -363,6 +405,8 @@ public class FatigueReportForm extends AppCompatActivity {
                 param.put("what_did_you_do", what_did_u_do.getText().toString());
                 param.put("what_could_be_done", what_could_be_done.getText().toString());
                 param.put("other_comment", other_comment.getText().toString());
+                param.put("how_you_felt", howyoufelt);
+                param.put("flightdecknap",strnap);
 
 
                 return param;
