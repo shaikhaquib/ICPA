@@ -36,4 +36,5 @@ public class APIs {
     public static String documentupload             = "http://api.tgtech.co.in/admin/assets/add_file.php";
     public static String show_admin_notification    = "http://api.tgtech.co.in/assets/php/show_admin_notification.php";
     public static String showfrf_all                = "http://api.tgtech.co.in/admin/assets/show_frf_byregion.php";
+    public static String payment_gateway                = "http://api.tgtech.co.in/assets/php/payment_gateway.php";
 }

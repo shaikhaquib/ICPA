@@ -174,8 +174,6 @@ public class PaymentProcessing extends Activity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        Intent i = new Intent(getApplicationContext(), PaymentActivity.class);
-        startActivity(i);
         finish();
     }
 

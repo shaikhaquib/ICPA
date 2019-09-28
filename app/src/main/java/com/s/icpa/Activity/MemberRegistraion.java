@@ -341,35 +341,75 @@ public class MemberRegistraion extends AppCompatActivity {
     };
         AppController.getInstance().addToRequestQueue(stringRequest);
     }
+    private void payment_gateway() {
 
+        final ViewDialog progressDialog  = new ViewDialog(MemberRegistraion.this);
+
+        progressDialog.show();
+        StringRequest stringRequest = new StringRequest(StringRequest.Method.POST, APIs.payment_gateway, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+
+                progressDialog.dismiss();
+
+                try {
+                    Log.d("Responce",response);
+
+                    JSONObject jsonObject = new JSONObject(response);
+                    if (jsonObject.getBoolean("status"))
+                    {
+
+                    }
+                    else
+                    {
+                        Global.diloge(MemberRegistraion.this,"Payment Error" , jsonObject.getString("error"));
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                progressDialog.dismiss();
+            }
+        })
+
+        {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map <String,String> param = new HashMap<String,String>();
+                param.put("region",strregion);
+                return param;
+            }
+    };
+        AppController.getInstance().addToRequestQueue(stringRequest);
+    }
+    public void createOrderInfo(String subId ,String subName ,String password , String mainId) {
 
 /*
-    public void createOrderInfo() {
+*
+         * @class OrderInfo - Contains required variables to create a new order object.*/
 
-
-        */
-/**
-         * @class OrderInfo - Contains required variables to create a new order object.
-         *//*
 
 
         OrderInfo objOrderInfo = new OrderInfo();
 
 
-        */
 /**
          * @param setMode
          *  Test – Test mode. QPay will not send transaction to bank gateway.
-         *  Live – for testing in live mode. Transaction request will be sent to bank.
-         *//*
+         *  Live – for testing in live mode. Transaction request will be sent to bank.*/
+
 
 
         objOrderInfo.setMode("test");
 
-        */
 /**
          * @param setQpayID - Combination of the Qpay ID issued by QPayIndia and base64 value of order amount separated by ` symbol.
-         *//*
+         */
 
 
         String orderAmount = "100";
@@ -378,124 +418,121 @@ public class MemberRegistraion extends AppCompatActivity {
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) {
             byt = orderAmount.getBytes(StandardCharsets.US_ASCII);
         }
-        String qpayId = "icpaapiacc" + "`" + new String(Base64.encodeToString(byt, Base64.DEFAULT));
+        String qpayId =  mainId+ "`" + new String(Base64.encodeToString(byt, Base64.DEFAULT));
         objOrderInfo.setQpayID(qpayId);
 
-        */
 /**
-         * @param setQpayPWD - The Password issued by QPayIndia.
-         *//*
+         * @param setQpayPWD - The Password issued by QPayIndia.*/
 
 
-        objOrderInfo.setQpayPWD("hgf!1234");
 
-        */
+        objOrderInfo.setQpayPWD(password);
+
 /**
-         * @param setSubmerchantID - Submerchant ID.
-         *//*
+         * @param setSubmerchantID - Submerchant ID.*/
 
-        objOrderInfo.setSubmerchantID(submerchantid.getText().toString());
 
-        */
+        objOrderInfo.setSubmerchantID(subId);
+
 /**
-         * @param setSubmerchantName - Name of Submerchant.
-         *//*
+         * @param setSubmerchantName - Name of Submerchant.*/
 
 
-        objOrderInfo.setSubmerchantName(submerchantname.getText().toString());
+
+        objOrderInfo.setSubmerchantName(subName);
 
 
-        */
 /**
-         * @param name -  Name of the customer.
-         *//*
+         * @param name -  Name of the customer.*/
+
 
 
         objOrderInfo.setName(name.getText().toString());
 
-        */
 /**
-         * @param setAddress - Address of the customer.
-         *//*
+         * @param setAddress - Address of the customer.*/
+
 
 
         objOrderInfo.setAddress(address.getText().toString());
 
-        */
 /**
-         * @param  setCity - City of the customer.
-         *//*
+         * @param  setCity - City of the customer.*/
+
 
 
         objOrderInfo.setCity(strregion);
 
-        */
 /**
-         * @param setState - State of the customer.
-         *//*
+         * @param setState - State of the customer*/
+
 
 
         objOrderInfo.setState(strregion);
 
-        */
 /**
-         * @param setCountry - Country of the customer.
-         *//*
+         * @param setCountry - Country of the customer.*/
 
 
-        objOrderInfo.setCountry(country.getText().toString());
 
-        */
+        objOrderInfo.setCountry("India");
+
 /**
-         * @param setPostal_code - Postal code of the customer.
-         *//*
+         * @param setPostal_code - Postal code of the customer.*/
 
 
-        objOrderInfo.setPostal_code(postal_code.getText().toString());
 
-        */
-/**
+        objOrderInfo.setPostal_code("000");
+
+
+/*
          * @param setPhone - Phone of the customer.
-         *//*
+*/
 
 
-        objOrderInfo.setPhone(phone.getText().toString());
 
-        */
-/**
+        objOrderInfo.setPhone(mobile.getText().toString());
+
+
+/*
          * @param setEmail - Email ID of the customer.
-         *//*
+*/
+
 
 
         objOrderInfo.setEmail(email.getText().toString());
 
-        */
-/** @param setOrderID - A unique Transaction ID generated on the developers side.
-         *//*
+/*
+* @param setOrderID - A unique Transaction ID generated on the developers side.
+*/
+
 
 
         objOrderInfo.setOrderID(UUID.randomUUID().toString().replace("-", "").substring(0, 16));
 
-        */
-/** @param setPaymentOption - C / D / N / U (C = Credit Card, D = Debit Card, N = Net banking, U - UPI).
-         *//*
+/*
+* @param setPaymentOption - C / D / N / U (C = Credit Card, D = Debit Card, N = Net banking, U - UPI).
+*/
+
 
 
         objOrderInfo.setPaymentOption("C,D,N,U");
 
-        */
-/** @param setCurrencyCode - ISO Code for the currency of the payment - INR
-         *//*
+/*
+* @param setCurrencyCode - ISO Code for the currency of the payment - INR
+*/
+
 
 
         objOrderInfo.setCurrencyCode("INR");
 
-        */
-/** @param setResponseActivity - A Response Class need to be created on the developers side.
-         *//*
+/*
+* @param setResponseActivity - A Response Class need to be created on the developers side.
+*/
 
 
-        objOrderInfo.setResponseActivity("com.example.macbook.qpaysdk.PaymentResponse");
+
+        objOrderInfo.setResponseActivity("com.s.icpa.Qpay.ResponseActivity");
 
         Intent i = new Intent(getApplicationContext(), PaymentProcessing.class);
         i.putExtra("OrderInfo", objOrderInfo);
@@ -503,6 +540,5 @@ public class MemberRegistraion extends AppCompatActivity {
         finish();
 
     }
-*/
 
 }
