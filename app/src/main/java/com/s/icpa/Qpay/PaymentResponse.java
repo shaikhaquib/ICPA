@@ -1,5 +1,6 @@
 package com.s.icpa.Qpay;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -9,6 +10,8 @@ import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.s.icpa.R;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -63,7 +66,7 @@ public class PaymentResponse extends Activity {
     public static boolean isNetworkStatusAvialable(Context context) {
         ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         if (connectivityManager != null) {
-            NetworkInfo netInfos = connectivityManager.getActiveNetworkInfo();
+            @SuppressLint("MissingPermission") NetworkInfo netInfos = connectivityManager.getActiveNetworkInfo();
             if (netInfos != null)
                 if (netInfos.isConnected())
                     return true;
