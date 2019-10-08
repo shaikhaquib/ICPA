@@ -3,10 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.s.icpa">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
     <application
         android:name=".AppController"
         android:allowBackup="true"
@@ -18,8 +14,24 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning"
         tools:replace="android:icon">
-        <activity android:name=".Admin.FatigueReportList"></activity>
-        <activity android:name=".Admin.AdminBlogs" />
+        <activity android:name=".Admin.UploadDirecter">
+        </activity>
+        <activity android:name=".Admin.ComplaintList">
+        </activity>
+        <activity android:name=".Admin.DirectorAdminlist">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Admin.FatigueReportList" />
+        <activity android:name=".Admin.AdminBlogs" >            <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
         <activity android:name=".Activity.Blogs" />
         <activity android:name=".Admin.DocumetListAdmin" />
         <activity android:name=".Admin.FatigueReportDetail" />
@@ -70,5 +82,9 @@
             </intent-filter>
         </activity>
     </application>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
 </manifest>

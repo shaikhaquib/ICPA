@@ -22,6 +22,7 @@ public class APIs {
     public static String ACM_list                   = "http://api.tgtech.co.in/admin/assets/acm.php";
     public static String Email_Request              = "http://api.tgtech.co.in/admin/assets/email_request.php";
     public static String Region_Request             = "http://api.tgtech.co.in/admin/assets/region_request.php";
+    public static String ComplaintList              = "http://api.tgtech.co.in/admin/assets/show_complaint.php";
     public static String ApllicationForm            = "http://api.tgtech.co.in/admin/assets/application_form.php";
     public static String approve_users              = "http://api.tgtech.co.in/admin/assets/approve_users.php";
     public static String updateApllication          = "http://api.tgtech.co.in/admin/assets/update_membership.php";
@@ -35,6 +36,8 @@ public class APIs {
     public static String getNotication              = "http://api.tgtech.co.in/assets/php/show_notification.php";
     public static String documentupload             = "http://api.tgtech.co.in/admin/assets/add_file.php";
     public static String show_admin_notification    = "http://api.tgtech.co.in/assets/php/show_admin_notification.php";
+    public static String show_circular              = "http://api.tgtech.co.in/assets/php/show_circular.php";
     public static String showfrf_all                = "http://api.tgtech.co.in/admin/assets/show_frf_byregion.php";
-    public static String payment_gateway                = "http://api.tgtech.co.in/assets/php/payment_gateway.php";
+    public static String payment_gateway            = "http://api.tgtech.co.in/assets/php/payment_gateway.php";
+    public static String writeSolution              = "http://api.tgtech.co.in/assets/php/solution.php";
 }

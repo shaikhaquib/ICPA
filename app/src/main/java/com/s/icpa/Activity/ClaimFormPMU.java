@@ -9,6 +9,7 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -128,7 +129,7 @@ public class ClaimFormPMU extends AppCompatActivity {
 
                 Holder holder = (Holder)viewHolder;
 
-                File file = new File(String.valueOf(arrayList.get(i)));
+                File file = FileUtils.getFile(getApplicationContext(),arrayList.get(i));
                 holder.filename.setText(file.getName());
 
             }
@@ -206,54 +207,24 @@ public class ClaimFormPMU extends AppCompatActivity {
 
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         // TODO Auto-generated method stub
 
-        switch (requestCode) {
-            case 7:
-                if (resultCode == RESULT_OK) {
-                    if (data.getClipData() != null) {
-                        int count = data.getClipData().getItemCount();
-                        int currentItem = 0;
-                        while (currentItem < count) {
-                            Uri imageUri = data.getClipData().getItemAt(currentItem).getUri();
-                            //do something with the image (save it to some directory or whatever you need to do with it here)
-                            currentItem = currentItem + 1;
-                            //    Log.d("Uri Selected", imageUri.toString());
-                            try {
-                                // Get the file path from the URI
-                                String path = FileUtils.getPath(this, imageUri);
-
-                                Log.d(TAG, "onActivityResult: Multiple File Selected"+ path);
-                                arrayList.add(imageUri);
-                                rvDocument.getAdapter().notifyDataSetChanged();
-
-
-                            } catch (Exception e) {
-                                Log.e(TAG, "File select error", e);
-                            }
-                        }
-
-
-                    } else if (data.getData() != null) {
-                        //do something with the image (save it to some directory or whatever you need to do with it here)
-                        final Uri uri = data.getData();
-                        Log.i(TAG, "Uri = " + uri.toString());
-                        try {
-                            // Get the file path from the URI
-                            final String path = FileUtils.getPath(this, uri);
-                            Log.d("Single File Selected", path);
-
-                            arrayList.add(uri);
-                            rvDocument.getAdapter().notifyDataSetChanged();
-
-                        } catch (Exception e) {
-                            Log.e(TAG, "File select error", e);
-                        }
+        if(requestCode == 7) {
+            if(null != data) { // checking empty selection
+                if(null != data.getClipData()) { // checking multiple selection or not
+                    for(int i = 0; i < data.getClipData().getItemCount(); i++) {
+                        Uri uri = data.getClipData().getItemAt(i).getUri();
+                        arrayList.add(uri);
+                        rvDocument.getAdapter().notifyDataSetChanged();
                     }
+                } else {
+                    Uri uri = data.getData();
+                    arrayList.add(uri);
+                    rvDocument.getAdapter().notifyDataSetChanged();
                 }
-        }
-    }
+            }
+        }    }
 
     private class UploadFileToServer extends AsyncTask<Void, Integer, String> {
         @Override
