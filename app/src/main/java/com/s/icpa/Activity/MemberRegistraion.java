@@ -32,6 +32,7 @@ import com.s.icpa.Qpay.PaymentProcessing;
 import com.s.icpa.R;
 import com.s.icpa.ViewDialog;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -289,8 +290,13 @@ public class MemberRegistraion extends AppCompatActivity {
                                 .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog, int which) {
                                         dialog.dismiss();
-                                        startActivity(new Intent(MemberRegistraion.this,LoginActivity.class));
-                                        finish();
+
+                                        if (!strradiotstatus.equals("NON-ICPA")) {
+                                            startActivity(new Intent(MemberRegistraion.this, LoginActivity.class));
+                                            finish();
+                                        }else {
+                                            payment_gateway();
+                                        }
                                     }
                                 })
                                 .setIcon(android.R.drawable.ic_dialog_alert)
@@ -355,14 +361,15 @@ public class MemberRegistraion extends AppCompatActivity {
                 try {
                     Log.d("Responce",response);
 
-                    JSONObject jsonObject = new JSONObject(response);
-                    if (jsonObject.getBoolean("status"))
+                    JSONArray array = new JSONArray(response);
+                    if (array.length()>0)
                     {
+                        JSONObject object = array.getJSONObject(0);
 
-                    }
-                    else
-                    {
-                        Global.diloge(MemberRegistraion.this,"Payment Error" , jsonObject.getString("error"));
+                        createOrderInfo(object.getString("submerchantid"),
+                                object.getString("submerchantname"),
+                                object.getString("password"),
+                                object.getString("qpay_id"));
                     }
 
                 } catch (JSONException e) {

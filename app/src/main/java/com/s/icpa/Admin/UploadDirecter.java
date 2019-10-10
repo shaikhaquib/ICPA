@@ -163,6 +163,7 @@ public class UploadDirecter extends AppCompatActivity {
 
                 AndroidMultiPartEntity multipart = new AndroidMultiPartEntity(requestURL, charset);
                 multipart.addFormField("type ", getIntent().getStringExtra("type"));
+                Log.d(TAG, "type: "+getIntent().getStringExtra("type"));
 
 
                 for (int i = 0; i < arrayList.size(); i++) {
