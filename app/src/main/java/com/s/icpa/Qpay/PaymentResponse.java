@@ -28,7 +28,6 @@ public class PaymentResponse extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.paymentresponse);
         String response = getIntent().getExtras().getString("response");
-        if (isNetworkStatusAvialable(getApplicationContext())) {
             try {
                 JSONObject objresonse = new JSONObject(response);
                 String paymentResponse = objresonse.getString("ResponseCode");
@@ -47,22 +46,17 @@ public class PaymentResponse extends Activity {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-        } else {
-            InternetNotAvailable();
 
-        }
 
     }
 
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        Intent i = new Intent(getApplicationContext(), PaymentActivity.class);
-        startActivity(i);
         finish();
-
     }
 
+/*
     public static boolean isNetworkStatusAvialable(Context context) {
         ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         if (connectivityManager != null) {
@@ -73,6 +67,7 @@ public class PaymentResponse extends Activity {
         }
         return false;
     }
+*/
 
     private void InternetNotAvailable() {
         android.support.v7.app.AlertDialog.Builder builder = new android.support.v7.app.AlertDialog.Builder(this);

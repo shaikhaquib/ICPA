@@ -20,7 +20,6 @@ import com.android.volley.toolbox.StringRequest;
 import com.google.gson.Gson;
 import com.s.icpa.Activity.APIs;
 import com.s.icpa.AppController;
-import com.s.icpa.Global;
 import com.s.icpa.Model.Documentlist;
 import com.s.icpa.R;
 import com.s.icpa.ViewDialog;
@@ -52,7 +51,7 @@ public class DirectorAdminlist extends AppCompatActivity {
         actionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),UploadDirecter.class).putExtra("type","1"));
+                startActivity(new Intent(getApplicationContext(),UploadDirecter.class).putExtra("type",getIntent().getStringExtra("type")));
             }
         });
 
@@ -92,15 +91,30 @@ public class DirectorAdminlist extends AppCompatActivity {
             }
         });
 
-        getData();
+        if (getIntent().getStringExtra("type").equals("1")) {
+            getData(APIs.show_director);
+            setTitle("Director");
+        } else if (getIntent().getStringExtra("type").equals("2")) {
+            getData(APIs.show_circular);
+            setTitle("Circular");
+        }else if (getIntent().getStringExtra("type").equals("01")) {
+            getData(APIs.show_director);
+            actionButton.setVisibility(View.GONE);
+            setTitle("Director");
+        } else if (getIntent().getStringExtra("type").equals("02")) {
+            getData(APIs.show_circular);
+            actionButton.setVisibility(View.GONE);
+            setTitle("Circular");
+        }
+
 
     }
 
-    private void getData() {
+    private void getData(String url) {
 
         final ViewDialog progressDialog = new ViewDialog(DirectorAdminlist.this);
         progressDialog.show();
-        StringRequest stringRequest = new StringRequest(StringRequest.Method.POST, APIs.show_circular, new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(StringRequest.Method.POST,url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
 
@@ -133,7 +147,7 @@ public class DirectorAdminlist extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> param = new HashMap<String, String>();
-                param.put("type", "1");
+                param.put("type",getIntent().getStringExtra("type"));
                 return param;
             }
         };

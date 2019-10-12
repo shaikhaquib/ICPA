@@ -87,7 +87,6 @@ public class PaymentProcessing extends Activity {
 
     public void processPayment(OrderInfo obj) {
 
-        try {
             browser = (WebView) findViewById(R.id.webview);
             browser.addJavascriptInterface(new WebAppInterface(this), "Android");
             MyBrowser client = new MyBrowser();
@@ -133,19 +132,13 @@ public class PaymentProcessing extends Activity {
             }
 
 
-            if (isNetworkStatusAvialable(getApplicationContext())) {
+           // if (isNetworkStatusAvialable(getApplicationContext())) {
                 browser.postUrl(obj.getRequestURL(), postData.getBytes());
-            } else {
-                InternetNotAvailable();
 
-            }
             responseActivity = obj.getResponseActivity();
             progressBar.setVisibility(View.GONE);
 
-        } catch (Exception e) {
-            Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
 
-        }
     }
 
     private class MyBrowser extends WebViewClient {

@@ -291,7 +291,7 @@ public class MemberRegistraion extends AppCompatActivity {
                                     public void onClick(DialogInterface dialog, int which) {
                                         dialog.dismiss();
 
-                                        if (!strradiotstatus.equals("NON-ICPA")) {
+                                        if (!strMemberstatus.equals("no")) {
                                             startActivity(new Intent(MemberRegistraion.this, LoginActivity.class));
                                             finish();
                                         }else {
@@ -539,7 +539,7 @@ public class MemberRegistraion extends AppCompatActivity {
 
 
 
-        objOrderInfo.setResponseActivity("com.s.icpa.Qpay.ResponseActivity");
+        objOrderInfo.setResponseActivity("com.s.icpa.Qpay.PaymentResponse");
 
         Intent i = new Intent(getApplicationContext(), PaymentProcessing.class);
         i.putExtra("OrderInfo", objOrderInfo);

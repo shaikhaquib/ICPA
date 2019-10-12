@@ -159,7 +159,11 @@ public class UploadDirecter extends AppCompatActivity {
                 //Log.d("file path", filePath);
 
                 String charset = "UTF-8";
-                String requestURL = APIs.documentupload;
+                String requestURL = null;
+                if (getIntent().getStringExtra("type").equals("1"))
+                    requestURL = APIs.add_director;
+                else
+                    requestURL = APIs.add_circular;
 
                 AndroidMultiPartEntity multipart = new AndroidMultiPartEntity(requestURL, charset);
                 multipart.addFormField("type ", getIntent().getStringExtra("type"));

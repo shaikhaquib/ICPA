@@ -34,7 +34,6 @@ public class AdminActivity extends AppCompatActivity {
     SQLiteHandler db = new SQLiteHandler(this);
     SessionManager sessionManager ;
 
-    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -93,6 +92,12 @@ public class AdminActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(),FatigueReportList.class));
             } else if(id==R.id.blogs) {
                 startActivity(new Intent(getApplicationContext(), AdminBlogs.class));
+            }else if(id==R.id.showDirector) {
+                startActivity(new Intent(getApplicationContext(), DirectorAdminlist.class).putExtra("type","1"));
+            }else if (id==R.id.showcircular){
+                startActivity(new Intent(getApplicationContext(), DirectorAdminlist.class).putExtra("type","2"));
+            }else if (id==R.id.complaint){
+                startActivity(new Intent(getApplicationContext(), ComplaintList.class));
             }
 
 

@@ -22,6 +22,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.s.icpa.Admin.AdminBlogs;
+import com.s.icpa.Admin.DirectorAdminlist;
 import com.s.icpa.Global;
 import com.s.icpa.R;
 import com.s.icpa.SQLiteHandler;
@@ -162,6 +163,10 @@ public class MainActivity extends AppCompatActivity
         }else  if (id == R.id.blogs) {
             // Handle the camera action
             startActivity(new Intent(getApplicationContext(),Blogs.class));
+        }else if(id==R.id.showDirector) {
+            startActivity(new Intent(getApplicationContext(), DirectorAdminlist.class).putExtra("type","01"));
+        }else if (id==R.id.showcircular){
+            startActivity(new Intent(getApplicationContext(), DirectorAdminlist.class).putExtra("type","02"));
         }
 
     }
