@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity
         View headerView = navigationView.getHeaderView(0);
         TextView navUsername = headerView.findViewById(R.id.navUserName);
         TextView NavEmail = headerView.findViewById(R.id.navEmail);
-        NavEmail.setText(Global.Email);
+        NavEmail.setText("Membership ID: "+Global.customer_id);
         navUsername.setText(Global.name);
     }
 

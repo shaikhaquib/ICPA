@@ -217,7 +217,7 @@
                                 android:id="@+id/oEmail"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:hint="Official Email"
+                                android:hint="Company Email Id"
                                 android:inputType="textEmailAddress"
                                 android:maxLines="1"
                                 android:singleLine="true" />
@@ -296,6 +296,18 @@
                             >
 
                             <RadioButton
+                                android:id="@+id/executive"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Executive" />
+
+                            <RadioButton
+                                android:id="@+id/retired"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Retired" />
+
+                            <RadioButton
                                 android:id="@+id/officer"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -370,6 +382,7 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="6dp"
                             android:gravity="left"
+                            android:visibility="gone"
                             android:text="Current Status " />
 
 
@@ -378,6 +391,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_margin="6dp"
+                            android:visibility="gone"
                             android:orientation="vertical">
 
                             <RadioButton
@@ -422,6 +436,16 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="B-777" />
+                            <RadioButton
+                                android:id="@+id/B-737"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="B-737" />
+                            <RadioButton
+                                android:id="@+id/atr"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="ATR" />
 
                             <RadioButton
                                 android:id="@+id/B-787"
@@ -486,17 +510,16 @@
                         </RadioGroup>
 
                         <android.support.design.widget.TextInputLayout
-                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                             android:layout_width="match_parent"
+                            android:visibility="gone"
                             android:layout_height="wrap_content">
 
                             <EditText
                                 android:id="@+id/sapno"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:hint="SAP No"
-                                android:inputType="number"
-                                android:maxLength="10"
+                                android:text="SAP Number"
+                                android:inputType="text"
                                 android:maxLines="1"
                                 android:singleLine="true" />
 

@@ -161,6 +161,18 @@
                 >
 
                 <RadioButton
+                    android:id="@+id/executive"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Executive" />
+
+                <RadioButton
+                    android:id="@+id/retired"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Retired" />
+
+                <RadioButton
                     android:id="@+id/officer"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -193,6 +205,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="6dp"
+                android:visibility="gone"
                 android:orientation="vertical">
 
                 <RadioButton

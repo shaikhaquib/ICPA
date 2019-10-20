@@ -115,7 +115,7 @@ public class MemberRegistraion extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-                new DatePickerDialog(MemberRegistraion.this, date, myCalendar
+                new DatePickerDialog(MemberRegistraion.this, android.R.style.Theme_Holo_Dialog,date, myCalendar
                         .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
                         myCalendar.get(Calendar.DAY_OF_MONTH)).show();
             }
@@ -125,7 +125,7 @@ public class MemberRegistraion extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-                new DatePickerDialog(MemberRegistraion.this, dateannier, myCalendar
+                new DatePickerDialog(MemberRegistraion.this, android.R.style.Theme_Holo_Dialog,dateannier, myCalendar
                         .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
                         myCalendar.get(Calendar.DAY_OF_MONTH)).show();
             }

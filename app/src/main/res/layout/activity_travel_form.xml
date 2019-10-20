@@ -319,7 +319,16 @@
                         android:layout_height="wrap_content"
                         android:text="A-320" />
 
-
+                    <RadioButton
+                        android:id="@+id/B-737"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="B-737" />
+                    <RadioButton
+                        android:id="@+id/atr"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ATR" />
                     <RadioButton
                         android:id="@+id/B-777"
                         android:layout_width="wrap_content"

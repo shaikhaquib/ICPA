@@ -240,7 +240,7 @@
                     android:gravity="center"
                     android:layout_marginTop="4dp"
                     android:textSize="14sp"
-                    android:text="Complaints \n section"/>
+                    android:text="Complains \n section"/>
 
             </LinearLayout>
             <LinearLayout
@@ -344,7 +344,7 @@
                     android:gravity="center"
                     android:layout_marginTop="4dp"
                     android:textSize="14sp"
-                    android:text="Director"/>
+                    android:text="Directives"/>
 
             </LinearLayout>
             <LinearLayout
@@ -367,7 +367,7 @@
                     android:gravity="center"
                     android:layout_marginTop="4dp"
                     android:textSize="14sp"
-                    android:text="Circular"/>
+                    android:text="Circulars"/>
 
             </LinearLayout>
             <LinearLayout
@@ -406,7 +406,7 @@
                     android:gravity="center"
                     android:layout_marginTop="4dp"
                     android:textStyle="bold"
-                    android:text="Blogs and Notice"/>
+                    android:text="Latest News"/>
 
 
             </LinearLayout>

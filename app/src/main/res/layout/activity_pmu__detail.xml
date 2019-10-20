@@ -88,7 +88,7 @@
                         android:layout_height="wrap_content"
                         android:layout_column="1"
                         android:padding="@dimen/margin_16"
-                        android:text="SAP number"
+                        android:text="Membership No"
                         android:textColor="#ff6783b8"
                         android:textStyle="bold" />
 
@@ -97,6 +97,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_column="2"
+                        android:visibility="visible"
                         android:textColor="#ff304073" />
                 </TableRow>
 

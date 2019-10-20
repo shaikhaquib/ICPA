@@ -67,7 +67,7 @@
                     android:id="@+id/sapno"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="SAP Number"
+                    android:hint="Membership Number"
                     android:inputType="text"
                     android:maxLines="1"
                     android:singleLine="true" />

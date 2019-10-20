@@ -44,7 +44,7 @@
         <activity android:name=".Admin.AdminActivity" />
         <activity android:name=".Activity.Change_Region" />
         <activity android:name=".Qpay.Sample_MainActivity" />
-        <activity android:name=".Qpay.PaymentResponse" />
+        <activity android:name=".Qpay.ResponseActivity" />
         <activity android:name=".Activity.FlightRequestClander" />
         <activity android:name=".Activity.ICPAMemeberApplication" />
         <activity android:name=".Activity.ClaimfromRWC" />

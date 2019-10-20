@@ -131,7 +131,7 @@ public class ClaimfromRWC extends AppCompatActivity {
         date_pmu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new DatePickerDialog(ClaimfromRWC.this, date, myCalendar
+                new DatePickerDialog(ClaimfromRWC.this, android.R.style.Theme_Holo_Dialog, date,myCalendar
                         .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
                         myCalendar.get(Calendar.DAY_OF_MONTH)).show();
             }
